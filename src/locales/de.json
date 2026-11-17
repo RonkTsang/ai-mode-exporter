@@ -1,0 +1,18 @@
+{
+  "common": {
+    "cancel": "Abbrechen"
+  },
+  "aiModeContinue": {
+    "title": "In Gemini fortfahren",
+    "description": "Wähle die Fragen und Antworten aus, die in Gemini angehängt werden sollen.",
+    "selectAll": "Alle auswählen",
+    "selectionCount": "$1 von $2 ausgewählt",
+    "expandAnswer": "Antwort anzeigen",
+    "collapseAnswer": "Antwort ausblenden",
+    "noTurns": "Warte, bis AI Mode die Antwort fertiggestellt hat, und versuche es erneut.",
+    "transferFailed": "Gemini konnte mit dieser Auswahl nicht geöffnet werden. Versuche es erneut.",
+    "attachmentFailed": "Gemini konnte den AI Mode-Anhang nicht hinzufügen.",
+    "retry": "Erneut versuchen",
+    "transferExpired": "Diese Übertragung ist abgelaufen. Starte erneut in AI Mode."
+  }
+}

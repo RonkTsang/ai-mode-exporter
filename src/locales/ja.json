@@ -1,0 +1,18 @@
+{
+  "common": {
+    "cancel": "キャンセル"
+  },
+  "aiModeContinue": {
+    "title": "Gemini で続ける",
+    "description": "Gemini に添付する質問と回答を選択します。",
+    "selectAll": "すべて選択",
+    "selectionCount": "全 $2 件中 $1 件を選択",
+    "expandAnswer": "回答を表示",
+    "collapseAnswer": "回答を非表示",
+    "noTurns": "AI Mode の回答が終わってから、もう一度お試しください。",
+    "transferFailed": "この選択内容で Gemini を開けませんでした。もう一度お試しください。",
+    "attachmentFailed": "Gemini で AI Mode の添付ファイルを追加できませんでした。",
+    "retry": "再試行",
+    "transferExpired": "転送の有効期限が切れました。AI Mode からやり直してください。"
+  }
+}

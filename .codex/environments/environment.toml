@@ -1,0 +1,15 @@
+version = 1
+name = "ai-mode-enchance"
+
+[setup]
+script = "pnpm install"
+
+[[actions]]
+name = "Extension Dev"
+icon = "tool"
+command = "pnpm dev"
+
+[[actions]]
+name = "Website Dev"
+icon = "tool"
+command = "pnpm dev:website"

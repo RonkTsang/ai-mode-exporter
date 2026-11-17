@@ -1,0 +1,8 @@
+---
+globs: src/components/**,src/entrypoints/**
+description: Shadow DOM mounting and Chakra UI v3 conventions
+---
+
+Mount React UI with the Provider from `src/components/ui/provider-shadow-dom.tsx`.
+Use Chakra components and the system defined in `src/components/ui/system.ts`.
+Keep Emotion styles, Chakra portals, and the theme within the same shadow root.

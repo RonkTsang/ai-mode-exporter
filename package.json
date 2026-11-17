@@ -1,0 +1,52 @@
+{
+  "name": "ai-mode-enchance",
+  "description": "Browser extension for Google Search AI Mode.",
+  "private": true,
+  "version": "0.1.0",
+  "author": "RonkTsang",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "lint": "pnpm run compile",
+    "check:i18n": "node scripts/check-i18n.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run --passWithNoTests",
+    "postinstall": "wxt prepare",
+    "dev:website": "pnpm --filter website dev",
+    "build:website": "pnpm --filter website build"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.38.0",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-shadow": "^20.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitest/ui": "^5.1.0",
+    "@wxt-dev/i18n": "^0.2.8",
+    "@wxt-dev/module-react": "^1.2.2",
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2",
+    "vite-plugin-svgr": "^5.2.0",
+    "vitest": "^5.1.0",
+    "wxt": "^0.21.5"
+  },
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "common": {
+    "cancel": "取消"
+  },
+  "aiModeContinue": {
+    "title": "在 Gemini 中繼續",
+    "description": "選擇要附加到 Gemini 的問題和回答。",
+    "selectAll": "全選",
+    "selectionCount": "已選擇 $1 項，共 $2 項",
+    "expandAnswer": "展開回答",
+    "collapseAnswer": "收合回答",
+    "noTurns": "請等候 AI 模式回答完成後再試一次。",
+    "transferFailed": "無法使用此選取內容開啟 Gemini，請再試一次。",
+    "attachmentFailed": "Gemini 無法加入 AI 模式附件。",
+    "retry": "重試",
+    "transferExpired": "此遷移已過期，請在 AI Mode 中重新開始。"
+  }
+}
