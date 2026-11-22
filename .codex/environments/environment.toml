@@ -1,5 +1,5 @@
 version = 1
-name = "ai-mode-enchance"
+name = "ai-mode-power-kit"
 
 [setup]
 script = "pnpm install"

@@ -52,12 +52,12 @@ describe('AI Mode transfer storage', () => {
   it.each(aiModeTargetIds)('carries only the transfer ID to the %s new chat page', target => {
     const id = 'c3aa0996-0c57-4e27-b51f-6eb011f03deb'
     const url = new URL(getAiModeTransferUrl(target, id))
-    expect(url.href).toBe(`${aiModeTargets[target].newChatUrl}#ai-mode-enchance=${id}`)
+    expect(url.href).toBe(`${aiModeTargets[target].newChatUrl}#ai-mode-power-kit=${id}`)
     expect(url.search).toBe('')
     expect(getAiModeTransferId(target, url)).toBe(id)
     const other = target === 'gemini' ? 'chatgpt' : 'gemini'
     expect(getAiModeTransferId(other, url)).toBeNull()
     expect(getAiModeTransferId(target, new URL(`./existing-chat${url.hash}`, url))).toBeNull()
-    expect(getAiModeTransferId(target, new URL('#ai-mode-enchance=invalid', url))).toBeNull()
+    expect(getAiModeTransferId(target, new URL('#ai-mode-power-kit=invalid', url))).toBeNull()
   })
 })

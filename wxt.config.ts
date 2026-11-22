@@ -18,7 +18,7 @@ export default defineConfig({
     ...(env.browser === 'firefox' ? {
       browser_specific_settings: {
         gecko: {
-          id: 'ai-mode-enchance@ronktsang.com',
+          id: 'ai-mode-power-kit@ronktsang.com',
           data_collection_permissions: { required: ['none'] },
         },
       },

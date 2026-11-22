@@ -48,7 +48,7 @@ createRoot(document.getElementById('root')!).render(
           showArrow
         >
           <Link
-            href="https://github.com/RonkTsang/ai-mode-enchance"
+            href="https://github.com/RonkTsang/ai-mode-power-kit"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

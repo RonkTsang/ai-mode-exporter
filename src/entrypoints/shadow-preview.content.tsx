@@ -9,7 +9,7 @@ export default defineContentScript({
     if (location.port !== '4321') return
 
     const host = document.createElement('div')
-    host.dataset.aiModeEnchancePreview = ''
+    host.dataset.aiModePowerKitPreview = ''
     document.body.append(host)
     const root = createRoot(host)
 
