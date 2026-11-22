@@ -1,5 +1,5 @@
 version = 1
-name = "ai-mode-power-kit"
+name = "ai-mode-exporter"
 
 [setup]
 script = "pnpm install"

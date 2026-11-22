@@ -1,6 +1,6 @@
 # AGENTS.md
 
-AI Mode Power Kit is an independent browser extension for Google Search AI Mode.
+AI Mode Exporter is an independent browser extension for Google Search AI Mode.
 The extension uses WXT, React, TypeScript, and Chakra UI v3. The
 `website/` workspace package uses Astro and Starlight.
 

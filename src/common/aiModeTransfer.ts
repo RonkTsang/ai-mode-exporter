@@ -10,7 +10,7 @@ export const AI_MODE_ATTACHMENT_EXTENSION = '.md'
 const GOOGLE_SEARCH_ORIGIN = 'https://www.google.com'
 const GOOGLE_SEARCH_PATH = '/search'
 const AI_MODE_SEARCH_MODE = '50'
-const TRANSFER_FRAGMENT = 'ai-mode-power-kit='
+const TRANSFER_FRAGMENT = 'ai-mode-exporter='
 const TRANSFER_KEY_PREFIX = 'aiModeTransfer:'
 const UUID_PATTERN = /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/
 

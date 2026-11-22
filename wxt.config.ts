@@ -9,7 +9,10 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react', '@wxt-dev/i18n/module'],
   srcDir: 'src',
   manifest: (env) => ({
-    name: env.mode === 'development' ? '🔴 AI Mode Power Kit' : 'AI Mode Power Kit',
+    name: env.mode === 'development'
+      ? '🔴 AI Mode Exporter'
+      : 'AI Mode Exporter — Continue in Gemini & ChatGPT',
+    short_name: 'AI Mode Exporter',
     default_locale: 'en',
     ...(env.browser === 'chrome' ? {
       permissions: ['storage', 'scripting'],
@@ -18,7 +21,7 @@ export default defineConfig({
     ...(env.browser === 'firefox' ? {
       browser_specific_settings: {
         gecko: {
-          id: 'ai-mode-power-kit@ronktsang.com',
+          id: 'ai-mode-exporter@ronktsang.com',
           data_collection_permissions: { required: ['none'] },
         },
       },

@@ -1,6 +1,6 @@
 # AGENTS.md (website)
 
-The `website/` workspace package contains the AI Mode Power Kit documentation
+The `website/` workspace package contains the AI Mode Exporter documentation
 site. It uses Astro and Starlight.
 
 - Install dependencies from the repository root with `pnpm install`.

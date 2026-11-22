@@ -46,7 +46,7 @@ export default defineContentScript({
       if (ctx.isInvalid || result === 'imported' || result === 'cancelled') return
 
       host = document.createElement('div')
-      host.dataset.aiModePowerKitTransferStatus = ''
+      host.dataset.aiModeExporterTransferStatus = ''
       document.body.append(host)
       root = createRoot(host)
       root.render(<Provider><Toaster /></Provider>)

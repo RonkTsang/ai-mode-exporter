@@ -9,7 +9,7 @@ export default defineContentScript({
     if (location.port !== '4321') return
 
     const host = document.createElement('div')
-    host.dataset.aiModePowerKitPreview = ''
+    host.dataset.aiModeExporterPreview = ''
     document.body.append(host)
     const root = createRoot(host)
 
@@ -35,7 +35,7 @@ export default defineContentScript({
           shadow="md"
           p="3"
         >
-          <Text fontWeight="medium">AI Mode Power Kit</Text>
+          <Text fontWeight="medium">AI Mode Exporter</Text>
           <Button size="xs" variant="outline" onClick={removePreview}>
             {i18n.t('common.cancel')}
           </Button>

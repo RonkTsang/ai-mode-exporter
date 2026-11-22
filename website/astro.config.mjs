@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'AI Mode Power Kit',
+      title: 'AI Mode Exporter',
       customCss: ['./src/styles/custom.css'],
       defaultLocale: 'root',
       locales: {

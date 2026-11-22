@@ -14,7 +14,7 @@ document.documentElement.lang = browser.i18n.getUILanguage()
 createRoot(document.getElementById('root')!).render(
   <Provider>
     <Stack as="main" bg="bg" color="fg" w="22rem" gap="0" p="4">
-      <Heading as="h1" size="sm" mb="3">AI Mode Power Kit</Heading>
+      <Heading as="h1" size="sm" mb="3">AI Mode Exporter</Heading>
       <AskAiModeForm />
       <ContinueCurrentAiMode />
       <HStack as="footer" justify="flex-end" gap="1" mt="6">
@@ -48,7 +48,7 @@ createRoot(document.getElementById('root')!).render(
           showArrow
         >
           <Link
-            href="https://github.com/RonkTsang/ai-mode-power-kit"
+            href="https://github.com/RonkTsang/ai-mode-exporter"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

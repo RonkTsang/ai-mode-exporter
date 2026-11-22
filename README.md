@@ -1,6 +1,6 @@
-# <img src="public/icon/128.png" width="32" height="32" align="absmiddle" alt=""> AI Mode Power Kit
+# <img src="public/icon/128.png" width="32" height="32" align="absmiddle" alt=""> AI Mode Exporter
 
-AI Mode Power Kit is an independent Chrome extension that lets you start a
+AI Mode Exporter is an independent Chrome extension that lets you start a
 Google Search AI Mode conversation from the toolbar and continue it in Gemini
 or ChatGPT.
 
@@ -14,7 +14,6 @@ or ChatGPT.
   receives it as a Markdown attachment, and ChatGPT receives it in the composer.
   Review the draft, add your follow-up, and send it when you're ready.
 
-![The AI Mode conversation picker with Gemini and ChatGPT as destinations](docs/onboarding-selection.png)
 
 ## Install from source
 
