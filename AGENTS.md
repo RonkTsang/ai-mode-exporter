@@ -28,7 +28,9 @@ The extension uses WXT, React, TypeScript, and Chakra UI v3. The
   watch mode. Add product content scripts as separate entrypoints.
 - Scope website permissions and content-script matches to the behavior that
   needs them. Follow the [host DOM guide](docs/agent_guides/host-dom.md)
-  when interacting with the search page.
+  when interacting with the search page, and register long-lived site features
+  as `ContentService`s under their site host per the
+  [content services guide](docs/agent_guides/content-services.md).
 
 ## Shadow DOM and Chakra UI
 
