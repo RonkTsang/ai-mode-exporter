@@ -8,6 +8,9 @@ import {
   isAiModeUrl,
   type AiModeTransfer,
 } from '@/common/aiModeTransfer'
+import { createLogger } from '@/utils/logger'
+
+const logger = createLogger('AI Mode')
 
 async function removeStaleTransfers(): Promise<void> {
   const values = await browser.storage.local.get(null)
@@ -26,9 +29,9 @@ async function openWithTransfer(target: AiModeTarget, text: string, title?: stri
     await browser.tabs.create({ url: getAiModeTransferUrl(target, id) })
     return true
   } catch (error) {
-    console.warn('[AI Mode] Could not open the selected platform', error)
+    logger.warn('Could not open the selected platform', error)
     await browser.storage.local.remove(key).catch(cleanupError => {
-      console.warn('[AI Mode] Could not clear failed transfer', cleanupError)
+      logger.warn('Could not clear failed transfer', cleanupError)
     })
     return false
   }
@@ -36,7 +39,7 @@ async function openWithTransfer(target: AiModeTarget, text: string, title?: stri
 
 export function startAiModeTransferBackground(): void {
   browser.runtime.onStartup.addListener(() => {
-    void removeStaleTransfers().catch(error => console.warn('[AI Mode] Could not clear expired transfers', error))
+    void removeStaleTransfers().catch(error => logger.warn('Could not clear expired transfers', error))
   })
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message?.type !== AI_MODE_TRANSFER_MESSAGE) return
