@@ -1,0 +1,57 @@
+name: Package Extension
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Verify and package Chrome and Firefox
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v6.1.0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.4'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm compile
+      - run: pnpm check:i18n
+      - run: pnpm test:run
+
+      - name: Build and package
+        run: |
+          pnpm zip
+          pnpm zip:firefox
+
+      - name: Verify ZIPs and manifest versions
+        shell: bash
+        run: |
+          name=$(node -p 'require("./package.json").name')
+          version=$(node -p 'require("./package.json").version')
+          for browser in chrome firefox; do
+            archive=".output/${name}-${version}-${browser}.zip"
+            unzip -tq "$archive"
+            unzip -p "$archive" manifest.json | jq -e --arg version "$version" '.version == $version'
+          done
+          unzip -tq ".output/${name}-${version}-sources.zip"
+
+      - name: Upload extension packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-packages
+          path: .output/*.zip
+          include-hidden-files: true
+          if-no-files-found: error
