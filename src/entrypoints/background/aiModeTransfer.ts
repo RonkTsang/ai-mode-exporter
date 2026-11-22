@@ -1,4 +1,5 @@
 import { browser } from 'wxt/browser'
+import { isAiModeTarget, type AiModeTarget } from '@/common/aiModeTargets'
 import {
   AI_MODE_TRANSFER_MESSAGE,
   findStaleAiModeTransferKeys,
@@ -14,18 +15,18 @@ async function removeStaleTransfers(): Promise<void> {
   if (keys.length > 0) await browser.storage.local.remove(keys)
 }
 
-async function openGeminiWithTransfer(text: string, title?: string): Promise<boolean> {
+async function openWithTransfer(target: AiModeTarget, text: string, title?: string): Promise<boolean> {
   const id = crypto.randomUUID()
   const key = getAiModeTransferKey(id)
-  const transfer: AiModeTransfer = { text, title, createdAt: Date.now() }
+  const transfer: AiModeTransfer = { target, text, title, createdAt: Date.now() }
 
   try {
     await removeStaleTransfers()
     await browser.storage.local.set({ [key]: transfer })
-    await browser.tabs.create({ url: getAiModeTransferUrl(id) })
+    await browser.tabs.create({ url: getAiModeTransferUrl(target, id) })
     return true
   } catch (error) {
-    console.warn('[AI Mode] Could not open Gemini', error)
+    console.warn('[AI Mode] Could not open the selected platform', error)
     await browser.storage.local.remove(key).catch(cleanupError => {
       console.warn('[AI Mode] Could not clear failed transfer', cleanupError)
     })
@@ -41,13 +42,13 @@ export function startAiModeTransferBackground(): void {
     if (message?.type !== AI_MODE_TRANSFER_MESSAGE) return
     if (
       !sender.url || sender.frameId !== 0 || !isAiModeUrl(new URL(sender.url))
-      || typeof message.text !== 'string' || !message.text.trim()
+      || !isAiModeTarget(message.target) || typeof message.text !== 'string' || !message.text.trim()
     ) {
       sendResponse(false)
       return
     }
     const title = typeof message.title === 'string' ? message.title : undefined
-    void openGeminiWithTransfer(message.text, title).then(sendResponse)
+    void openWithTransfer(message.target, message.text, title).then(sendResponse)
     return true
   })
 }

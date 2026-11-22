@@ -2,17 +2,33 @@
   "common": {
     "cancel": "취소"
   },
+  "askAiMode": {
+    "prompt": "AI Mode에 질문하기",
+    "search": "검색",
+    "newLine": "$1 키를 눌러 줄 바꾸기",
+    "openFailed": "AI Mode를 열 수 없습니다. 다시 시도하세요."
+  },
+  "popup": {
+    "continueInCurrentTab": "이 채팅 이어가기…",
+    "continueAccessible": "Gemini 또는 ChatGPT에서 이 채팅 이어가기",
+    "continueFailed": "대화를 열 수 없습니다. AI Mode를 새로고침한 후 다시 시도하세요.",
+    "supportDeveloper": "개발 후원하기",
+    "supportTooltip": "다음 업데이트에 카페인 한 스푼 ☕"
+  },
   "aiModeContinue": {
-    "title": "Gemini에서 이어가기",
-    "description": "Gemini에 첨부할 질문과 답변을 선택하세요.",
+    "entry": "계속하기…",
+    "title": "대화 이어가기",
+    "description": "가져갈 질문과 답변을 선택하세요.",
+    "continueIn": "계속할 플랫폼",
     "selectAll": "모두 선택",
     "selectionCount": "전체 $2개 중 $1개 선택됨",
     "expandAnswer": "답변 표시",
     "collapseAnswer": "답변 숨기기",
     "noTurns": "AI Mode가 답변을 마칠 때까지 기다린 후 다시 시도하세요.",
-    "transferFailed": "이 선택 항목으로 Gemini를 열 수 없습니다. 다시 시도하세요.",
-    "attachmentFailed": "Gemini에서 AI Mode 첨부파일을 추가하지 못했습니다.",
+    "unreadableTurns": "일부 대화를 읽지 못했습니다. 대화를 새로고침한 후 다시 시도해 주세요.",
     "retry": "다시 시도",
-    "transferExpired": "전송이 만료되었습니다. AI Mode에서 다시 시작하세요."
+    "transferExpired": "전송이 만료되었습니다. AI Mode에서 다시 시작하세요.",
+    "transferFailed": "선택한 플랫폼을 열 수 없습니다. 다시 시도하세요.",
+    "attachmentFailed": "AI Mode 대화를 가져오지 못했습니다."
   }
 }

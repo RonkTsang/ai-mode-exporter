@@ -10,10 +10,7 @@ const config = defineConfig({
   },
   preflight: { scope: host },
   globalCss: {
-    [host]: {
-      ...defaultConfig.globalCss?.html,
-      colorPalette: 'blue',
-    },
+    [host]: defaultConfig.globalCss?.html ?? {},
   },
 })
 

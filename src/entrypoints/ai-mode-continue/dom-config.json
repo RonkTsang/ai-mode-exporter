@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "profiles": {
+    "google-ai-mode": {
+      "mountObservedAttributes": ["role", "data-xid"],
+      "selectors": {
+        "main": "[role=\"main\"]",
+        "inputPlate": "[data-xid=\"aim-mars-input-plate\"]:has(textarea)",
+        "conversationRoot": "[data-xid=\"aim-mars-turn-root\"]",
+        "pageHeading": ":scope > h1",
+        "turnScope": "[data-scope-id]",
+        "turnList": "[data-tr-rsts]",
+        "questionBlock": "[data-rfsp]",
+        "liveQuestion": "[role=\"heading\"][aria-level=\"2\"]",
+        "restoredQuestionHeading": "h2",
+        "restoredQuestionText": "span[tabindex=\"-1\"]",
+        "answerHeading": "h3[data-ignore-copy]",
+        "answerBody": "[data-container-id=\"main-col\"]",
+        "inlineTextButton": "span span[role=\"button\"][tabindex]:not([aria-label], [aria-controls], [aria-expanded], [aria-haspopup])",
+        "answerUi": "[data-ignore-copy], [data-xid=\"Gd7Hsc\"]"
+      }
+    }
+  }
+}

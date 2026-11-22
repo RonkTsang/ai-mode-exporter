@@ -2,17 +2,33 @@
   "common": {
     "cancel": "取消"
   },
+  "askAiMode": {
+    "prompt": "询问 AI 模式",
+    "search": "搜索",
+    "newLine": "$1 换行",
+    "openFailed": "无法打开 AI 模式，请重试。"
+  },
+  "popup": {
+    "continueInCurrentTab": "继续此对话…",
+    "continueAccessible": "在 Gemini 或 ChatGPT 中继续此对话",
+    "continueFailed": "无法打开对话。请重新加载 AI 模式后重试。",
+    "supportDeveloper": "支持开发",
+    "supportTooltip": "给下次更新加点咖啡因 ☕"
+  },
   "aiModeContinue": {
-    "title": "在 Gemini 中继续",
-    "description": "选择要附加到 Gemini 的问题和回答。",
+    "entry": "继续对话…",
+    "title": "选择要继续的问答",
+    "description": "选择要带到其他平台的问题和回答。",
+    "continueIn": "在其他平台继续",
     "selectAll": "全选",
     "selectionCount": "已选择 $1 项，共 $2 项",
     "expandAnswer": "展开回答",
     "collapseAnswer": "收起回答",
     "noTurns": "请等待 AI 模式回答完成后重试。",
-    "transferFailed": "无法使用此选择打开 Gemini，请重试。",
-    "attachmentFailed": "Gemini 无法添加 AI 模式附件。",
+    "unreadableTurns": "部分轮次无法读取。请重新加载对话后重试。",
     "retry": "重试",
-    "transferExpired": "此迁移已过期，请在 AI Mode 中重新开始。"
+    "transferExpired": "此迁移已过期，请在 AI Mode 中重新开始。",
+    "transferFailed": "无法打开所选平台，请重试。",
+    "attachmentFailed": "无法导入 AI Mode 对话。"
   }
 }

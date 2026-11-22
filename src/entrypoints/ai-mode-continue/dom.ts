@@ -1,9 +1,6 @@
-const INPUT_PLATE = '[data-xid="aim-mars-input-plate"]'
-const QUESTION = 'div.ilZyRc span.VndcI'
-const ANSWER = 'div.Zkbeff'
-const ANSWER_BODY = ':scope > div > [data-container-id="main-col"][data-xid="VpUvz"]'
-// The response toolbar also contains the feedback form, even when it is closed.
-const SKIP_NODES = '[hidden], [aria-hidden="true"], [data-ignore-copy], [data-xid="Gd7Hsc"], svg, script, style'
+import { defaultAiModeDomProfile, type AiModeDomSelectors } from './dom-config'
+
+const SKIP_NODES = '[hidden], [aria-hidden="true"], [role="region"], [role="dialog"], svg, script, style'
 
 export interface AiModeTurn {
   number: number
@@ -14,6 +11,7 @@ export interface AiModeTurn {
 export interface AiModeConversation {
   title: string
   turns: AiModeTurn[]
+  hasUnreadableTurns: boolean
 }
 
 function uniqueElement<T extends Element>(root: ParentNode, selector: string): T | null {
@@ -21,13 +19,26 @@ function uniqueElement<T extends Element>(root: ParentNode, selector: string): T
   return nodes.length === 1 ? nodes.item(0) : null
 }
 
-export function findAiModeInputPlate(root: ParentNode = document): HTMLElement | null {
-  return uniqueElement(root, `[role="main"] ${INPUT_PLATE}:has(textarea)`)
+export function findAiModeInputPlate(
+  root: ParentNode = document,
+  selectors: AiModeDomSelectors = defaultAiModeDomProfile.selectors,
+): HTMLElement | null {
+  return uniqueElement(root, `:is(${selectors.main}) :is(${selectors.inputPlate})`)
 }
 
-function serializeTable(table: HTMLTableElement): string {
+export function findAiModeMain(
+  root: ParentNode = document,
+  selectors: AiModeDomSelectors = defaultAiModeDomProfile.selectors,
+): HTMLElement | null {
+  const evidenceSelector = `${selectors.inputPlate}, ${selectors.conversationRoot}`
+  const candidates = Array.from(root.querySelectorAll<HTMLElement>(selectors.main))
+    .filter(main => main.querySelector(evidenceSelector))
+  return candidates.length === 1 ? candidates[0]! : null
+}
+
+function serializeTable(table: HTMLTableElement, selectors: AiModeDomSelectors): string {
   const rows = Array.from(table.rows, row => Array.from(row.cells, cell => (
-    serializeChildren(cell).trim().replace(/\s*\n\s*/g, ' ').replace(/\|/g, '\\|')
+    serializeChildren(cell, selectors).trim().replace(/\s*\n\s*/g, ' ').replace(/\|/g, '\\|')
   )))
   const [header, ...body] = rows
   if (!header) return ''
@@ -37,31 +48,34 @@ function serializeTable(table: HTMLTableElement): string {
   return `\n\n${[line(header), line(Array<string>(columns).fill('---')), ...body.map(line)].join('\n')}\n\n`
 }
 
-function serializeChildren(element: Element): string {
-  return Array.from(element.childNodes, serializeNode).join('')
+function serializeChildren(element: Element, selectors: AiModeDomSelectors): string {
+  return Array.from(element.childNodes, node => serializeNode(node, selectors)).join('')
 }
 
-function serializeNode(node: Node): string {
+function serializeNode(node: Node, selectors: AiModeDomSelectors): string {
   if (node.nodeType === Node.TEXT_NODE) return (node.textContent ?? '').replace(/\s+/g, ' ')
   if (!(node instanceof Element) || node.matches(SKIP_NODES)) return ''
+  // Google's response toolbar also contains the feedback form, even when it is closed.
+  if (node.matches(selectors.answerUi)) return ''
 
   const role = node.getAttribute('role')
-  if (role === 'region' || role === 'dialog') return ''
-  if (node instanceof HTMLTableElement) return serializeTable(node)
+  if (node instanceof HTMLTableElement) return serializeTable(node, selectors)
   if (node instanceof HTMLImageElement) return node.alt.trim()
   if (node instanceof HTMLAnchorElement && /^https?:$/.test(node.protocol)) {
-    const text = serializeChildren(node)
+    const text = serializeChildren(node, selectors)
     const label = text.trim() || node.getAttribute('aria-label')
-    return label ? `${text.trim() ? '' : ' '}[${label.replace(/[\[\]]/g, '\\$&')}](<${node.href.replace(/>/g, '%3E')}>)` : ''
+    const destination = node.href.replace(/[\\()]/g, '\\$&')
+    return label ? `${text.trim() ? '' : ' '}[${label.replace(/[\[\]]/g, '\\$&')}](${destination})` : ''
   }
 
-  if (node.matches('span.jAOkJc[role="button"]:not(.q224lc)')) return serializeChildren(node)
+  // Inline entities, such as place names, appear as buttons embedded in the prose.
+  if (node.matches(selectors.inlineTextButton)) return serializeChildren(node, selectors)
   if (node.matches('button, [role="button"]')) {
     const description = node.querySelector('img[alt]:not([alt=""])')?.getAttribute('alt')?.trim()
     return description ? `\n\n${description}\n\n` : ''
   }
 
-  const content = serializeChildren(node)
+  const content = serializeChildren(node, selectors)
   if (role === 'heading' || /^H[1-6]$/.test(node.tagName)) {
     const level = Number(node.getAttribute('aria-level') ?? node.tagName.slice(1))
     return `\n\n${'#'.repeat(Math.min(6, Math.max(3, level || 3)))} ${content.trim()}\n\n`
@@ -81,39 +95,95 @@ function serializeNode(node: Node): string {
   }
 }
 
-function readPageTitle(main: Element): string | undefined {
-  const heading = uniqueElement(main, ':scope > h1')?.textContent?.trim()
+function readPageTitle(main: Element, selectors: AiModeDomSelectors): string | undefined {
+  const heading = uniqueElement(main, selectors.pageHeading)?.textContent?.trim()
   const subject = heading?.match(/^[^:：]+[:：]\s*(.+)$/s)?.[1]?.trim()
   return subject && main.ownerDocument.title.startsWith(`${subject} - `) ? subject : undefined
 }
 
-export function readAiModeConversation(plate: HTMLElement): AiModeConversation {
-  const main = plate.closest('[role="main"]')
-  if (!main) return { title: '', turns: [] }
+function readQuestion(block: Element, selectors: AiModeDomSelectors): string {
+  const liveHeading = uniqueElement(block, selectors.liveQuestion)
+  if (liveHeading) return liveHeading.textContent?.trim() ?? ''
 
-  const turns: AiModeTurn[] = []
-  let title = readPageTitle(main) ?? ''
-  let question = ''
-  let number = 0
-  for (const element of main.querySelectorAll<HTMLElement>(`${QUESTION}, ${ANSWER}`)) {
-    if (element.matches(QUESTION)) {
-      question = element.textContent?.trim() ?? ''
-      title ||= question.replace(/\s+/g, ' ')
-      number += 1
+  // Restored turns include a localized heading that repeats the visible question.
+  const heading = uniqueElement(block, selectors.restoredQuestionHeading)?.textContent?.replace(/\s+/g, ' ')
+  if (!heading) return ''
+  const candidates = Array.from(block.querySelectorAll(selectors.restoredQuestionText))
+    .map(element => element.textContent?.trim() ?? '')
+    .filter(text => text && heading.includes(text.replace(/\s+/g, ' ')))
+  return candidates.length === 1 ? candidates[0] ?? '' : ''
+}
+
+function findTurnContainer(root: Element, question: Element, selectors: AiModeDomSelectors, answerMarkers: string): Element | null {
+  const scope = question.closest(selectors.turnScope)
+  if (scope && scope !== root && root.contains(scope)) return scope
+
+  // Live questions sit outside the response's scope. Stop before the container
+  // that groups multiple turns, even if some neighboring markers are missing.
+  for (let parent = question.parentElement; parent && parent !== root; parent = parent.parentElement) {
+    if (parent.matches(selectors.turnList)) break
+    if (parent.querySelector(answerMarkers)) return parent
+  }
+  return null
+}
+
+export function readAiModeConversation(
+  source: HTMLElement,
+  selectors: AiModeDomSelectors = defaultAiModeDomProfile.selectors,
+): AiModeConversation {
+  const main = source.matches(selectors.main) ? source : source.closest<HTMLElement>(selectors.main)
+  const conversation: AiModeConversation = { title: '', turns: [], hasUnreadableTurns: false }
+  if (!main) return conversation
+
+  const questionText = [selectors.liveQuestion, selectors.restoredQuestionHeading, selectors.restoredQuestionText].join(', ')
+  const questionBlock = `:is(${selectors.questionBlock}):has(${questionText})`
+  const answerMarkers = `${selectors.answerHeading}, ${selectors.answerBody}`
+  const turnMarkers = `${questionBlock}, ${answerMarkers}`
+  conversation.title = readPageTitle(main, selectors) ?? ''
+  const root = uniqueElement(main, selectors.conversationRoot)
+  if (!root) {
+    conversation.hasUnreadableTurns = !!main.querySelector(turnMarkers)
+    return conversation
+  }
+
+  const markers = Array.from(root.querySelectorAll(turnMarkers))
+    .filter(marker => !marker.parentElement?.closest(selectors.answerBody))
+  const unresolvedAnswers = new Set(markers.filter(marker => marker.matches(answerMarkers)))
+  const questions = markers.filter(marker => marker.matches(questionBlock))
+  for (const [index, block] of questions.entries()) {
+    const question = readQuestion(block, selectors)
+    conversation.title ||= question.replace(/\s+/g, ' ')
+    if (!question) {
+      conversation.hasUnreadableTurns = true
       continue
     }
 
-    const body = element.getAttribute('data-complete') === 'true'
-      ? uniqueElement(element, ANSWER_BODY)
-      : null
-    const answer = body ? serializeChildren(body).replace(/\n{3,}/g, '\n\n').trim() : ''
-    if (question && answer) turns.push({ number, question, answer })
-    question = ''
+    const container = findTurnContainer(root, block, selectors, answerMarkers)
+    if (!container) {
+      if (index < questions.length - 1) conversation.hasUnreadableTurns = true
+      continue
+    }
+
+    const [first, heading, body, extra] = markers.filter(marker => container.contains(marker))
+    if (first !== block || !heading?.matches(selectors.answerHeading) || !body?.matches(selectors.answerBody) || extra) {
+      if (index < questions.length - 1) conversation.hasUnreadableTurns = true
+      continue
+    }
+    if (container.matches(selectors.turnScope) && body.closest(selectors.turnScope) !== container) continue
+
+    unresolvedAnswers.delete(heading)
+    unresolvedAnswers.delete(body)
+
+    const answer = serializeChildren(body, selectors).replace(/\n{3,}/g, '\n\n').trim()
+    if (answer) conversation.turns.push({ number: index + 1, question, answer })
+    else if (index < questions.length - 1) conversation.hasUnreadableTurns = true
   }
-  return { title: title.replace(/\s+/g, ' '), turns }
+
+  conversation.hasUnreadableTurns ||= unresolvedAnswers.size > 0
+  return conversation
 }
 
-export function formatAiModeTranscript({ title, turns }: AiModeConversation): string {
+export function formatAiModeTranscript({ title, turns }: Pick<AiModeConversation, 'title' | 'turns'>): string {
   const transcript = turns.map(({ number, question, answer }) => (
     `## Turn ${number}\n\nQuestion: ${question}\n\nAnswer:\n\n${answer}`
   ))

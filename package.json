@@ -1,6 +1,6 @@
 {
   "name": "ai-mode-enchance",
-  "description": "Browser extension for Google Search AI Mode.",
+  "description": "An independent browser extension for Google Search AI Mode.",
   "private": true,
   "version": "0.1.0",
   "author": "RonkTsang",

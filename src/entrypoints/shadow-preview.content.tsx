@@ -35,7 +35,7 @@ export default defineContentScript({
           shadow="md"
           p="3"
         >
-          <Text fontWeight="medium">AI Mode Enchance</Text>
+          <Text fontWeight="medium">AI Mode Power Kit</Text>
           <Button size="xs" variant="outline" onClick={removePreview}>
             {i18n.t('common.cancel')}
           </Button>

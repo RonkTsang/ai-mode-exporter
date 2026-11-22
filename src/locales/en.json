@@ -2,17 +2,33 @@
   "common": {
     "cancel": "Cancel"
   },
+  "askAiMode": {
+    "prompt": "Ask AI Mode",
+    "search": "Search",
+    "newLine": "$1 for a new line",
+    "openFailed": "Could not open AI Mode. Try again."
+  },
+  "popup": {
+    "continueInCurrentTab": "Continue this chat…",
+    "continueAccessible": "Continue this chat in Gemini or ChatGPT",
+    "continueFailed": "Could not open the conversation. Reload AI Mode and try again.",
+    "supportDeveloper": "Support development",
+    "supportTooltip": "A little caffeine for the next update ☕"
+  },
   "aiModeContinue": {
-    "title": "Continue in Gemini",
-    "description": "Choose the questions and answers to attach in Gemini.",
+    "entry": "Continue in…",
+    "title": "Continue the conversation",
+    "description": "Choose the questions and answers to bring with you.",
+    "continueIn": "Continue in",
     "selectAll": "Select all",
     "selectionCount": "$1 of $2 selected",
     "expandAnswer": "Show answer",
     "collapseAnswer": "Hide answer",
     "noTurns": "Wait for AI Mode to finish answering, then try again.",
-    "transferFailed": "Could not open Gemini with this selection. Try again.",
-    "attachmentFailed": "Gemini could not add the AI Mode attachment.",
+    "unreadableTurns": "Some turns could not be read. Reload the conversation and try again.",
     "retry": "Retry",
-    "transferExpired": "This transfer has expired. Start again in AI Mode."
+    "transferExpired": "This transfer has expired. Start again in AI Mode.",
+    "transferFailed": "Could not open the selected platform. Try again.",
+    "attachmentFailed": "Could not import the AI Mode conversation."
   }
 }

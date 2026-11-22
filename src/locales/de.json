@@ -2,17 +2,33 @@
   "common": {
     "cancel": "Abbrechen"
   },
+  "askAiMode": {
+    "prompt": "AI Mode fragen",
+    "search": "Suchen",
+    "newLine": "$1 für einen Zeilenumbruch",
+    "openFailed": "AI Mode konnte nicht geöffnet werden. Versuche es erneut."
+  },
+  "popup": {
+    "continueInCurrentTab": "Chat fortsetzen…",
+    "continueAccessible": "Diesen Chat in Gemini oder ChatGPT fortsetzen",
+    "continueFailed": "Das Gespräch konnte nicht geöffnet werden. Lade AI Mode neu und versuche es erneut.",
+    "supportDeveloper": "Entwicklung unterstützen",
+    "supportTooltip": "Ein bisschen Koffein fürs nächste Update ☕"
+  },
   "aiModeContinue": {
-    "title": "In Gemini fortfahren",
-    "description": "Wähle die Fragen und Antworten aus, die in Gemini angehängt werden sollen.",
+    "entry": "Weiter mit…",
+    "title": "Gespräch fortsetzen",
+    "description": "Wähle die Fragen und Antworten aus, die du mitnehmen möchtest.",
+    "continueIn": "Weiter mit",
     "selectAll": "Alle auswählen",
     "selectionCount": "$1 von $2 ausgewählt",
     "expandAnswer": "Antwort anzeigen",
     "collapseAnswer": "Antwort ausblenden",
     "noTurns": "Warte, bis AI Mode die Antwort fertiggestellt hat, und versuche es erneut.",
-    "transferFailed": "Gemini konnte mit dieser Auswahl nicht geöffnet werden. Versuche es erneut.",
-    "attachmentFailed": "Gemini konnte den AI Mode-Anhang nicht hinzufügen.",
+    "unreadableTurns": "Einige Gesprächsrunden konnten nicht gelesen werden. Lade die Unterhaltung neu und versuche es erneut.",
     "retry": "Erneut versuchen",
-    "transferExpired": "Diese Übertragung ist abgelaufen. Starte erneut in AI Mode."
+    "transferExpired": "Diese Übertragung ist abgelaufen. Starte erneut in AI Mode.",
+    "transferFailed": "Die ausgewählte Plattform konnte nicht geöffnet werden. Versuche es erneut.",
+    "attachmentFailed": "Die AI Mode-Unterhaltung konnte nicht importiert werden."
   }
 }

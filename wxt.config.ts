@@ -8,7 +8,7 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react', '@wxt-dev/i18n/module'],
   srcDir: 'src',
   manifest: (env) => ({
-    name: env.mode === 'development' ? '🔴 AI Mode Enchance' : 'AI Mode Enchance',
+    name: env.mode === 'development' ? '🔴 AI Mode Power Kit' : 'AI Mode Power Kit',
     default_locale: 'en',
     ...(env.browser === 'chrome' ? { permissions: ['storage'] } : {}),
     ...(env.browser === 'firefox' ? {

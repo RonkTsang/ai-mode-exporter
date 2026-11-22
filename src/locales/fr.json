@@ -2,17 +2,33 @@
   "common": {
     "cancel": "Annuler"
   },
+  "askAiMode": {
+    "prompt": "Demander à AI Mode",
+    "search": "Rechercher",
+    "newLine": "$1 pour ajouter une ligne",
+    "openFailed": "Impossible d’ouvrir AI Mode. Réessayez."
+  },
+  "popup": {
+    "continueInCurrentTab": "Continuer cette conversation…",
+    "continueAccessible": "Continuer cette conversation dans Gemini ou ChatGPT",
+    "continueFailed": "Impossible d’ouvrir la conversation. Rechargez AI Mode et réessayez.",
+    "supportDeveloper": "Soutenir le développement",
+    "supportTooltip": "Un peu de caféine pour la prochaine mise à jour ☕"
+  },
   "aiModeContinue": {
-    "title": "Continuer dans Gemini",
-    "description": "Choisissez les questions et les réponses à joindre dans Gemini.",
+    "entry": "Continuer avec…",
+    "title": "Continuer la conversation",
+    "description": "Choisissez les questions et les réponses à emporter.",
+    "continueIn": "Continuer dans",
     "selectAll": "Tout sélectionner",
     "selectionCount": "$1 sur $2 sélectionnés",
     "expandAnswer": "Afficher la réponse",
     "collapseAnswer": "Masquer la réponse",
     "noTurns": "Attendez la fin de la réponse d’AI Mode, puis réessayez.",
-    "transferFailed": "Impossible d’ouvrir Gemini avec cette sélection. Réessayez.",
-    "attachmentFailed": "Gemini n’a pas pu ajouter la pièce jointe d’AI Mode.",
+    "unreadableTurns": "Certaines interactions n’ont pas pu être lues. Rechargez la conversation et réessayez.",
     "retry": "Réessayer",
-    "transferExpired": "Ce transfert a expiré. Recommencez depuis AI Mode."
+    "transferExpired": "Ce transfert a expiré. Recommencez depuis AI Mode.",
+    "transferFailed": "Impossible d’ouvrir la plateforme sélectionnée. Réessayez.",
+    "attachmentFailed": "Impossible d’importer la conversation AI Mode."
   }
 }

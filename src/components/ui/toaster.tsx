@@ -24,7 +24,7 @@ export const Toaster = () => {
           <Toast.Root width={{ md: "sm" }} flexDirection="column" alignItems="stretch">
             <HStack gap="3" width="100%">
               {toast.type === "loading" ? (
-                <Spinner size="sm" color="blue.solid" />
+                <Spinner size="sm" color="fg" />
               ) : (
                 <Toast.Indicator />
               )}
