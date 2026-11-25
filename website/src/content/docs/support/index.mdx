@@ -1,0 +1,49 @@
+---
+title: Support
+description: Contact the developer of AI Mode Exporter by email or on X, report a bug on GitHub, or suggest a feature.
+tableOfContents: false
+prev: false
+next: false
+---
+
+import SupportContent from '../../../components/SupportContent.astro';
+
+<SupportContent
+  intro="Have a question, found a bug, or have an idea for AI Mode Exporter? Choose the way you’d like to get in touch."
+  emailHeading="Email support"
+  emailDescription="Email me directly with a question, screenshot, recording, or details you’d like to share privately."
+  composeLabel="Send an email"
+  copyLabel="Copy email"
+  copiedLabel="Email address copied."
+  copyFailedLabel="Couldn’t copy. Select and copy the address above."
+  subject="[AI Mode Exporter] Support"
+  fields={[
+    'Feature I was trying to use',
+    'Steps I took',
+    'What happened',
+    'What I expected',
+    'Screenshot or recording (optional)',
+    'Chrome version (optional)',
+    'Extension version (optional)',
+    'Destination (Gemini or ChatGPT, if applicable)',
+  ]}
+  communityHeading="Community & public feedback"
+  githubDescription="Report a bug, suggest a feature, or follow existing issues. Posting requires a GitHub account and is public."
+  githubLabel="Visit GitHub Issues"
+  xDescription="Contact @RonkTsang with a question or feedback."
+  xLabel="Open X"
+  reportHeading="What helps with troubleshooting?"
+  reportDetails={[
+    'What you were trying to do and the steps you took.',
+    'What happened and what you expected.',
+    'A screenshot or short recording can help. Remove private chat text and account details before sharing.',
+  ]}
+  templateHeading="Copy a feedback template (optional)"
+  copyTemplateLabel="Copy feedback template"
+  templateCopiedLabel="Feedback template copied."
+  templateCopyFailedLabel="Couldn’t copy. Select and copy the template above."
+  helpHeading="You might find an answer here"
+  quickStartLabel="Quick start"
+  installationLabel="Installation and troubleshooting"
+  tutorialsLabel="Tutorials"
+/>

@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  source: ImageMetadata;
+  crop: { x: number; y: number; width: number; height: number };
+  alt: string;
+}
+
+const { source, crop, alt } = Astro.props;
+const cropStyle = {
+  '--frame-ratio': `${crop.width} / ${crop.height}`,
+  '--image-width': `${source.width / crop.width * 100}%`,
+  '--image-left': `${-crop.x / crop.width * 100}%`,
+  '--image-top': `${-crop.y / crop.height * 100}%`,
+};
+---
+
+<div class="preview-frame" style={cropStyle}>
+  <Image
+    src={source}
+    {alt}
+    format="webp"
+    quality={88}
+    loading="lazy"
+  />
+</div>
+
+<style>
+  .preview-frame {
+    position: relative;
+    aspect-ratio: var(--frame-ratio);
+    overflow: hidden;
+    background: #f6f8fb;
+  }
+
+  .preview-frame img {
+    position: absolute;
+    top: var(--image-top);
+    left: var(--image-left);
+    width: var(--image-width);
+    max-width: none;
+    height: auto;
+    margin: 0;
+  }
+</style>

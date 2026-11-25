@@ -4,6 +4,8 @@ AI Mode Exporter is an independent Chrome extension that lets you start a
 Google Search AI Mode conversation from the toolbar and continue it in Gemini
 or ChatGPT.
 
+![AI Mode Exporter’s Continue in dialog for selecting questions and answers to bring to Gemini or ChatGPT](docs/branding/chrome-web-store-1280x800-en.png)
+
 ## What you can do
 
 - **Ask AI Mode from the toolbar.** Click the extension icon, type a question,

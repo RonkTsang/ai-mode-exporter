@@ -1,0 +1,332 @@
+---
+import { Image } from 'astro:assets';
+import Hero from '@astrojs/starlight/components/Hero.astro';
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+import BrandPreview from './BrandPreview.astro';
+import ContinuePreview from './ContinuePreview.astro';
+import extensionLogo from '../../../public/icon/128.png';
+import importArtwork from '../../../docs/branding/chrome-web-store-import-1280x800-en.png';
+import geminiLogo from '../../../src/entrypoints/ai-mode-continue/logos/gemini.png';
+import chatgptLogo from '../../../src/entrypoints/ai-mode-continue/logos/chatgpt.png';
+
+const { entry, id, locale, siteTitleHref } = Astro.locals.starlightRoute;
+const { home, hero } = entry.data;
+const showHome = id === (locale ?? '') && home && hero;
+const destinations = home && [
+  {
+    name: 'Gemini',
+    logo: geminiLogo,
+    description: home.geminiDescription,
+    label: home.geminiLink,
+    href: `${siteTitleHref}blog/continue-google-ai-mode-in-gemini/`,
+    crop: { x: 103, y: 463, width: 496, height: 181 },
+  },
+  {
+    name: 'ChatGPT',
+    logo: chatgptLogo,
+    description: home.chatgptDescription,
+    label: home.chatgptLink,
+    href: `${siteTitleHref}blog/continue-google-ai-mode-in-chatgpt/`,
+    crop: { x: 681, y: 463, width: 496, height: 181 },
+  },
+];
+---
+
+{showHome && home && hero && destinations ? (
+  <div class="home-layout">
+    <div class="home-hero">
+      <div class="hero-copy">
+        <p class="product-name">
+          <Image src={extensionLogo} alt="" width={52} height={52} />
+          {entry.data.title}
+        </p>
+        <h1 id="_top" data-page-title class="home-heading" set:html={hero.title ?? entry.data.title} />
+        {hero.tagline && <p class="hero-tagline" set:html={hero.tagline} />}
+        <div class="hero-actions">
+          {hero.actions.map(({ text, link, variant }) => (
+            <a class:list={['hero-action', { primary: variant === 'primary' }]} href={link}>{text}</a>
+          ))}
+        </div>
+        <div class="mobile-language md:sl-hidden">
+          <LanguageSelect />
+        </div>
+      </div>
+      <div class="hero-preview">
+        <ContinuePreview copy={home.preview} {destinations} />
+      </div>
+    </div>
+
+    <section class="destinations" aria-labelledby="home-destinations">
+      <h2 id="home-destinations" class="home-heading" set:html={home.destinationsHeading} />
+      <p class="destinations-intro">{home.destinationsIntro}</p>
+      <div class="destination-grid">
+        {destinations.map(({ name, logo, description, label, href, crop }) => (
+          <article class="destination-card">
+            <h3><Image src={logo} width={30} height={30} fit="contain" alt="" />{name}</h3>
+            <p>{description}</p>
+            <div class="destination-preview">
+              <BrandPreview source={importArtwork} crop={crop} alt="" />
+            </div>
+            <a href={href}>{label}</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+) : (
+  <Hero />
+)}
+
+<style>
+  :global(html:has(.home-layout)) {
+    --sl-content-width: 78rem;
+    --home-bg: #f3f7fc;
+    --home-surface: #ffffff;
+    --home-ink: #202d3c;
+    --home-muted: #405167;
+    --home-accent: #104bdc;
+    --home-button: #104bdc;
+    --home-button-hover: #0b39b8;
+    --home-border: #526c902b;
+    --home-shadow: 0 18px 50px #213d6420, 0 2px 6px #253c6514;
+    --home-glow-blue: #467efb72;
+    --home-glow-cyan: #5de5f476;
+    --home-glow-green: #75f1cc78;
+    --home-glow-pink: #ff9ca970;
+    --home-glow-yellow: #ffe27687;
+    --sl-color-bg: var(--home-bg);
+    --sl-color-bg-nav: #f7faff;
+  }
+
+  :global(html[data-theme='dark']:has(.home-layout)) {
+    --home-bg: #101824;
+    --home-surface: #192639;
+    --home-ink: #f0f5fc;
+    --home-muted: #bdcce0;
+    --home-accent: #91b8ff;
+    --home-button: #245cdb;
+    --home-button-hover: #3269e4;
+    --home-border: #b3cefc44;
+    --home-shadow: 0 18px 50px #04071166;
+    --home-glow-blue: #2f5ed379;
+    --home-glow-cyan: #19798765;
+    --home-glow-green: #08775b59;
+    --home-glow-pink: #ac3b6d59;
+    --home-glow-yellow: #97733157;
+    --sl-color-bg-nav: #101824;
+  }
+
+  :global(html:has(.home-layout) body) {
+    background:
+      radial-gradient(ellipse 27rem 18rem at 98% 31rem, var(--home-glow-cyan), transparent 85%),
+      radial-gradient(ellipse 35rem 22rem at 99% 20rem, var(--home-glow-blue), transparent 85%),
+      radial-gradient(ellipse 24rem 18rem at 85% 37rem, var(--home-glow-green), transparent 85%),
+      radial-gradient(ellipse 27rem 19rem at 68% 35rem, var(--home-glow-yellow), transparent 85%),
+      radial-gradient(ellipse 26rem 17rem at 71% 13rem, var(--home-glow-pink), transparent 85%),
+      var(--home-bg);
+  }
+
+  .home-layout {
+    color: var(--home-muted);
+    padding-block-end: clamp(3rem, 7vw, 6rem);
+  }
+
+  .home-hero {
+    display: grid;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-block: clamp(2rem, 7vw, 6rem) clamp(3rem, 8vw, 7rem);
+  }
+
+  .hero-copy {
+    min-inline-size: 0;
+  }
+
+  .product-name,
+  .destination-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 720;
+    color: var(--home-ink);
+  }
+
+  .product-name {
+    font-size: clamp(1.12rem, 0.94rem + 0.6vw, 1.43rem);
+    margin-block-end: clamp(1rem, 2vw, 1.65rem);
+  }
+
+  .product-name img,
+  .destination-card h3 img {
+    flex: none;
+  }
+
+  .product-name img {
+    inline-size: 3rem;
+    block-size: 3rem;
+  }
+
+  .home-heading {
+    color: var(--home-ink);
+    font-weight: 780;
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+
+  .home-heading :global(span) {
+    color: var(--home-accent);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.55rem, 1.55rem + 3.7vw, 4.7rem);
+    max-inline-size: 15ch;
+  }
+
+  .hero-copy h1 :global(span) {
+    display: block;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.08rem, 0.96rem + 0.65vw, 1.42rem);
+    line-height: 1.5;
+    margin-block-start: 1.25rem;
+    max-inline-size: 38ch;
+    text-wrap: pretty;
+  }
+
+  .hero-tagline :global(strong) {
+    color: var(--home-ink);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin-block-start: 1.75rem;
+  }
+
+  .hero-action {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.85rem;
+    padding: 0.65rem 1.05rem;
+    border: 1px solid var(--home-border);
+    border-radius: 0.7rem;
+    background: var(--home-surface);
+    color: var(--home-ink);
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .hero-action.primary {
+    background: var(--home-button);
+    border-color: transparent;
+    color: #fff;
+  }
+
+  .hero-action.primary:hover {
+    background: var(--home-button-hover);
+  }
+
+  .hero-action:not(.primary):hover {
+    border-color: var(--home-accent);
+    color: var(--home-accent);
+  }
+
+  .home-layout :is(a, select):focus-visible {
+    outline: 2px solid var(--home-accent);
+    outline-offset: 4px;
+  }
+
+  .mobile-language {
+    margin-block-start: 1rem;
+  }
+
+  .hero-preview {
+    min-inline-size: 0;
+    container-type: inline-size;
+    border: 1px solid var(--home-border);
+    border-radius: clamp(0.8rem, 2vw, 1.2rem);
+    overflow: hidden;
+    box-shadow: var(--home-shadow);
+  }
+
+  .destinations {
+    padding-block-start: clamp(1.5rem, 4vw, 3.5rem);
+    border-block-start: 1px solid var(--home-border);
+  }
+
+  .destinations h2 {
+    font-size: clamp(2rem, 1.05rem + 2.7vw, 3.75rem);
+  }
+
+  .destinations-intro {
+    margin-block-start: 0.65rem;
+    font-size: clamp(1rem, 0.95rem + 0.5vw, 1.25rem);
+  }
+
+  .destination-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1rem, 2vw, 1.6rem);
+    margin-block-start: clamp(1.3rem, 3vw, 2.4rem);
+  }
+
+  .destination-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.85rem;
+    min-inline-size: 0;
+    padding: clamp(1.05rem, 2.6vw, 1.8rem);
+    border: 1px solid var(--home-border);
+    border-radius: 1.35rem;
+    background: var(--home-surface);
+    box-shadow: var(--home-shadow);
+  }
+
+  .destination-card h3 {
+    font-size: clamp(1.35rem, 1.1rem + 0.6vw, 1.75rem);
+    letter-spacing: -0.035em;
+  }
+
+  .destination-card h3 img {
+    inline-size: 2rem;
+    block-size: 2rem;
+    object-fit: contain;
+  }
+
+  .destination-card p {
+    flex: 1;
+  }
+
+  .destination-preview {
+    inline-size: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .destination-card a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    color: var(--home-accent);
+    font-weight: 650;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (min-width: 44rem) {
+    .destination-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 60rem) {
+    .home-hero {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    }
+  }
+</style>
