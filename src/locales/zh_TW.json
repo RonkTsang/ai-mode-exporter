@@ -29,6 +29,19 @@
     "retry": "重試",
     "transferExpired": "此遷移已過期，請在 AI Mode 中重新開始。",
     "transferFailed": "無法開啟所選平台，請再試一次。",
-    "attachmentFailed": "無法匯入 AI Mode 對話。"
+    "attachmentFailed": "無法匯入 AI Mode 對話。",
+    "copy": "複製",
+    "saveAs": "另存新檔",
+    "markdown": "Markdown",
+    "copied": "已複製到剪貼簿。",
+    "copyFailed": "無法複製所選對話，請再試一次。",
+    "saveFailed": "無法下載 Markdown 檔案，請再試一次。",
+    "pdf": "PDF…",
+    "printFailed": "無法開啟 PDF 預覽，請再試一次。"
+  },
+  "aiModePrint": {
+    "title": "AI Mode 對話",
+    "savePdf": "列印 / 另存為 PDF",
+    "unavailable": "此 PDF 預覽無法使用，請重新匯出對話。"
   }
 }

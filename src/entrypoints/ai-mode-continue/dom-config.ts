@@ -14,6 +14,10 @@ export interface AiModeDomSelectors {
   answerHeading: string
   answerBody: string
   inlineTextButton: string
+  answerImageGallery: string
+  answerImageCard: string
+  answerMap: string
+  answerMapImage: string
   answerUi: string
 }
 

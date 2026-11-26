@@ -29,6 +29,19 @@
     "retry": "Reintentar",
     "transferExpired": "La transferencia ha caducado. Empieza de nuevo en AI Mode.",
     "transferFailed": "No se pudo abrir la plataforma seleccionada. Inténtalo de nuevo.",
-    "attachmentFailed": "No se pudo importar la conversación de AI Mode."
+    "attachmentFailed": "No se pudo importar la conversación de AI Mode.",
+    "copy": "Copiar",
+    "saveAs": "Guardar como",
+    "markdown": "Markdown",
+    "copied": "Copiado al portapapeles.",
+    "copyFailed": "No se pudo copiar la conversación seleccionada. Inténtalo de nuevo.",
+    "saveFailed": "No se pudo descargar el archivo Markdown. Inténtalo de nuevo.",
+    "pdf": "PDF…",
+    "printFailed": "No se pudo abrir la vista previa del PDF. Inténtalo de nuevo."
+  },
+  "aiModePrint": {
+    "title": "Conversación de AI Mode",
+    "savePdf": "Imprimir / Guardar como PDF",
+    "unavailable": "Esta vista previa del PDF no está disponible. Exporta la conversación de nuevo."
   }
 }

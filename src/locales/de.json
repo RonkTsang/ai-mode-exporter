@@ -29,6 +29,19 @@
     "retry": "Erneut versuchen",
     "transferExpired": "Diese Übertragung ist abgelaufen. Starte erneut in AI Mode.",
     "transferFailed": "Die ausgewählte Plattform konnte nicht geöffnet werden. Versuche es erneut.",
-    "attachmentFailed": "Die AI Mode-Unterhaltung konnte nicht importiert werden."
+    "attachmentFailed": "Die AI Mode-Unterhaltung konnte nicht importiert werden.",
+    "copy": "Kopieren",
+    "saveAs": "Speichern unter",
+    "markdown": "Markdown",
+    "copied": "In die Zwischenablage kopiert.",
+    "copyFailed": "Die ausgewählte Unterhaltung konnte nicht kopiert werden. Bitte erneut versuchen.",
+    "saveFailed": "Die Markdown-Datei konnte nicht heruntergeladen werden. Bitte erneut versuchen.",
+    "pdf": "PDF…",
+    "printFailed": "Die PDF-Vorschau konnte nicht geöffnet werden. Bitte erneut versuchen."
+  },
+  "aiModePrint": {
+    "title": "AI Mode-Unterhaltung",
+    "savePdf": "Drucken / Als PDF speichern",
+    "unavailable": "Diese PDF-Vorschau ist nicht verfügbar. Exportiere die Unterhaltung erneut."
   }
 }

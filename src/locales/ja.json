@@ -29,6 +29,19 @@
     "retry": "再試行",
     "transferExpired": "転送の有効期限が切れました。AI Mode からやり直してください。",
     "transferFailed": "選択したプラットフォームを開けませんでした。もう一度お試しください。",
-    "attachmentFailed": "AI Mode の会話をインポートできませんでした。"
+    "attachmentFailed": "AI Mode の会話をインポートできませんでした。",
+    "copy": "コピー",
+    "saveAs": "名前を付けて保存",
+    "markdown": "Markdown",
+    "copied": "クリップボードにコピーしました。",
+    "copyFailed": "選択した会話をコピーできませんでした。もう一度お試しください。",
+    "saveFailed": "Markdown ファイルをダウンロードできませんでした。もう一度お試しください。",
+    "pdf": "PDF…",
+    "printFailed": "PDF プレビューを開けませんでした。もう一度お試しください。"
+  },
+  "aiModePrint": {
+    "title": "AI Mode の会話",
+    "savePdf": "印刷 / PDF として保存",
+    "unavailable": "この PDF プレビューは利用できません。会話をもう一度エクスポートしてください。"
   }
 }

@@ -29,6 +29,19 @@
     "retry": "Réessayer",
     "transferExpired": "Ce transfert a expiré. Recommencez depuis AI Mode.",
     "transferFailed": "Impossible d’ouvrir la plateforme sélectionnée. Réessayez.",
-    "attachmentFailed": "Impossible d’importer la conversation AI Mode."
+    "attachmentFailed": "Impossible d’importer la conversation AI Mode.",
+    "copy": "Copier",
+    "saveAs": "Enregistrer sous",
+    "markdown": "Markdown",
+    "copied": "Copié dans le presse-papiers.",
+    "copyFailed": "Impossible de copier la conversation sélectionnée. Réessayez.",
+    "saveFailed": "Impossible de télécharger le fichier Markdown. Réessayez.",
+    "pdf": "PDF…",
+    "printFailed": "Impossible d’ouvrir l’aperçu PDF. Réessayez."
+  },
+  "aiModePrint": {
+    "title": "Conversation AI Mode",
+    "savePdf": "Imprimer / Enregistrer au format PDF",
+    "unavailable": "Cet aperçu PDF n’est pas disponible. Exportez à nouveau la conversation."
   }
 }

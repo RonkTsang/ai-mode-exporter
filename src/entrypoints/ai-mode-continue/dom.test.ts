@@ -1,4 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import Markdown from 'react-markdown'
 import { findAiModeInputPlate, findAiModeMain, formatAiModeTranscript, readAiModeConversation } from './dom'
 import { defaultAiModeDomProfile } from './dom-config'
 
@@ -140,6 +143,109 @@ describe('AI Mode transcript', () => {
 
     const transcript = formatAiModeTranscript(readAiModeConversation(plate))
     expect(transcript).toContain('[report](https://example.com/sales%20report\\)?q=Q\\(1\\\\2).')
+  })
+
+  it('omits highlight boundary labels while preserving the highlighted answer and its source', () => {
+    const answer = [
+      '<div>Google is offering <mark>',
+      '<span data-rfsp data-skip-highlighting> [突显文字开始] </span>',
+      'up to <strong>50% off</strong> annual plans',
+      '<span data-rfsp data-skip-highlighting> [突显文字结束] </span>',
+      '</mark>.<a href="https://example.com/offer" aria-label="Source"></a></div>',
+    ].join('')
+    const plate = mountConversation(`
+      <div>${prompt('What is the Black Friday offer?')}${response(answer)}</div>
+    `)
+
+    const transcript = formatAiModeTranscript(readAiModeConversation(plate))
+
+    expect(transcript).toContain('Google is offering up to **50% off** annual plans. [Source](https://example.com/offer)')
+    expect(transcript).not.toMatch(/突显文字开始|突显文字结束/)
+  })
+
+  it('preserves strong emphasis around punctuation in continuous Chinese text', () => {
+    const theme = '“更多创造、连接与游玩的方式”（More Ways to Create, Connect, and Play）'
+    const answer = [
+      '<div><strong>TwitchCon</strong>。本届大会',
+      '<span>以<strong>', theme, '<!-- render marker --></strong></span>',
+      '<span>为核心主题</span>。</div>',
+    ].join('')
+    const plate = mountConversation(`<div>${prompt('TwitchCon 的主题是什么？')}${response(answer)}</div>`)
+    const transcript = formatAiModeTranscript(readAiModeConversation(plate))
+
+    const rendered = document.createElement('div')
+    rendered.innerHTML = renderToStaticMarkup(createElement(Markdown, { children: transcript }))
+
+    expect(Array.from(rendered.querySelectorAll('strong'), element => element.textContent)).toEqual(['TwitchCon', theme])
+    expect(rendered.querySelector('p:last-child')?.textContent).toBe(`TwitchCon。本届大会以${theme}为核心主题。`)
+  })
+
+  it('exports ordinary images, Google image viewer cards, and a single map snapshot', () => {
+    const answer = [
+      '<p>Before the gallery <a href="https://example.com/diagram"><img src="/media/diagram.png" alt="Diagram [1]"></a>.</p>',
+      '<div data-viewer-group data-ignore-copy>',
+      '<span role="button" data-im=\'[0,"id",["https://example.com/thumb.jpg",100,200],["https://example.com/original(1).jpg",400,800],{"2003":[null,null,"https://example.com/article"]}]\'>',
+      '<img src="data:image/jpeg;base64,AAAA" alt="TwitchCon photo">',
+      '</span>',
+      '<span role="button" data-im=\'[0,"id",["https://example.com/thumb-2.jpg",100,200],["javascript:alert(1)",400,800],{}]\'>',
+      '<img src="data:image/jpeg;base64,AAAA" alt="Thumbnail fallback">',
+      '</span>',
+      '<span role="button" data-im="invalid"><img src="https://example.com/rendered.png" alt="DOM fallback"></span>',
+      '<span role="button" data-im="invalid" hidden><img src="https://example.com/hidden.png" alt="Hidden card"></span>',
+      '</div>',
+      '<div role="region" data-artifact-type="map"><img src="blob:https://example.com/tile"><img src="https://www.google.com/maps/vt/data=preview" alt="地图"></div>',
+      '<button><img src="https://example.com/favicon.png" alt="">Show sources</button>',
+      '<div data-ignore-copy><img src="https://example.com/toolbar.png" alt="Toolbar img"></div>',
+      '<div role="region"><img src="https://example.com/other-region.png" alt="Other region"></div>',
+      '<p><img src="blob:https://example.com/local" alt="Unavailable image"></p>',
+    ].join('')
+    const plate = mountConversation(`<div>${prompt('Show images')}${response(answer)}</div>`)
+    const conversation = readAiModeConversation(plate)
+    const transcript = formatAiModeTranscript(conversation)
+    const rendered = document.createElement('div')
+    rendered.innerHTML = renderToStaticMarkup(createElement(Markdown, { children: transcript }))
+
+    expect(conversation.turns[0]?.previewImageSources).toEqual(new Map([
+      ['https://example.com/original(1).jpg', 'data:image/jpeg;base64,AAAA'],
+      ['https://example.com/thumb-2.jpg', 'data:image/jpeg;base64,AAAA'],
+    ]))
+    expect(Array.from(rendered.querySelectorAll('img'), image => [image.alt, image.getAttribute('src')])).toEqual([
+      ['Diagram [1]', new URL('/media/diagram.png', document.baseURI).href],
+      ['TwitchCon photo', 'https://example.com/original(1).jpg'],
+      ['Thumbnail fallback', 'https://example.com/thumb-2.jpg'],
+      ['DOM fallback', 'https://example.com/rendered.png'],
+      ['地图', 'https://www.google.com/maps/vt/data=preview'],
+    ])
+    expect(Array.from(rendered.querySelectorAll('a img'), image => image.parentElement?.getAttribute('href'))).toEqual([
+      'https://example.com/diagram',
+      'https://example.com/article',
+    ])
+    const gallery = rendered.querySelector('img[alt="TwitchCon photo"]')?.closest('p')
+    expect(Array.from(gallery?.querySelectorAll('img') ?? [], image => image.alt)).toEqual([
+      'TwitchCon photo', 'Thumbnail fallback', 'DOM fallback',
+    ])
+    expect(rendered.textContent).toContain('Unavailable image')
+    expect(transcript).not.toMatch(/base64|blob:|javascript:|Hidden card|Show sources|Toolbar img|Other region/)
+  })
+
+  it.each([
+    { tag: 'ul', marker: '-' },
+    { tag: 'ol', marker: '1.' },
+  ])('omits empty $tag items from the transcript', ({ tag, marker }) => {
+    const list = [
+      `<${tag}>`,
+      '<li><span aria-hidden="true">Placeholder</span></li>',
+      '<li><strong>First answer</strong></li>',
+      '<li><br>&nbsp;</li>',
+      '<li><a href="https://example.com/" aria-label="Source"></a></li>',
+      '<li><svg></svg></li>',
+      `</${tag}>`,
+    ].join('')
+    const plate = mountConversation(`<div>${prompt('List the answers')}${response(list)}</div>`)
+
+    const { turns } = readAiModeConversation(plate)
+
+    expect(turns[0]?.answer).toBe(`${marker} **First answer**\n${marker} [Source](https://example.com/)`)
   })
 
   it('uses the page topic when the conversation heading and browser title agree', () => {

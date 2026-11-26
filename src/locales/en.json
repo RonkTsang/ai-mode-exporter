@@ -29,6 +29,19 @@
     "retry": "Retry",
     "transferExpired": "This transfer has expired. Start again in AI Mode.",
     "transferFailed": "Could not open the selected platform. Try again.",
-    "attachmentFailed": "Could not import the AI Mode conversation."
+    "attachmentFailed": "Could not import the AI Mode conversation.",
+    "copy": "Copy",
+    "saveAs": "Save as",
+    "markdown": "Markdown",
+    "copied": "Copied to clipboard.",
+    "copyFailed": "Could not copy the selected conversation. Try again.",
+    "saveFailed": "Could not download the Markdown file. Try again.",
+    "pdf": "PDF…",
+    "printFailed": "Could not open the PDF preview. Try again."
+  },
+  "aiModePrint": {
+    "title": "AI Mode conversation",
+    "savePdf": "Print / Save as PDF",
+    "unavailable": "This PDF preview is unavailable. Export the conversation again."
   }
 }

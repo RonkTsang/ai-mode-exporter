@@ -18,7 +18,11 @@
         "answerHeading": "h3[data-ignore-copy]",
         "answerBody": "[data-container-id=\"main-col\"]",
         "inlineTextButton": "span span[role=\"button\"][tabindex]:not([aria-label], [aria-controls], [aria-expanded], [aria-haspopup])",
-        "answerUi": "[data-ignore-copy], [data-xid=\"Gd7Hsc\"]"
+        "answerImageGallery": "[data-viewer-group][data-ignore-copy]",
+        "answerImageCard": "[role=\"button\"][data-im]",
+        "answerMap": "[role=\"region\"][data-artifact-type=\"map\"]",
+        "answerMapImage": "img[src*=\"/maps/vt/\"][alt]:not([alt=\"\"])",
+        "answerUi": "[data-ignore-copy], [data-xid=\"Gd7Hsc\"], mark > span[data-rfsp][data-skip-highlighting]"
       }
     }
   }
