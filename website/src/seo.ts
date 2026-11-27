@@ -1,5 +1,18 @@
 import { defineRouteMiddleware, type StarlightRouteData } from '@astrojs/starlight/route-data';
 
+const saveMenuImage = {
+  path: '/images/save-as.webp',
+  alt: 'AI Mode Exporter Save as menu with Markdown and PDF options',
+};
+const exportTutorialImages = new Map([
+  ['blog/save-google-ai-mode-conversation', saveMenuImage],
+  ['blog/save-google-ai-mode-as-markdown', saveMenuImage],
+  ['blog/save-google-ai-mode-as-pdf', {
+    path: '/images/export-pdf.webp',
+    alt: 'Local AI Mode Exporter preview with the Print / Save as PDF button',
+  }],
+]);
+
 export const onRequest = defineRouteMiddleware(({ locals, site, url }) => {
   if (!site) return;
 
@@ -17,8 +30,9 @@ export const onRequest = defineRouteMiddleware(({ locals, site, url }) => {
   const { title, description } = entry.data;
   const slug = locale ? id.slice(locale.length + 1) : id;
   const canonical = new URL(url.pathname, site).href;
-  const image = new URL('/images/onboarding-selection.png', site).href;
-  const imageAlt = 'AI Mode Exporter dialog for choosing questions and answers to continue in Gemini or ChatGPT';
+  const exportImage = exportTutorialImages.get(slug);
+  const image = new URL(exportImage?.path ?? '/images/onboarding-selection.png', site).href;
+  const imageAlt = exportImage?.alt ?? 'AI Mode Exporter dialog for choosing questions and answers to continue in Gemini or ChatGPT';
   const isPost = slug.startsWith('blog/');
 
   const openGraphType = head.find(({ attrs }) => attrs?.property === 'og:type');
@@ -51,7 +65,7 @@ export const onRequest = defineRouteMiddleware(({ locals, site, url }) => {
       inLanguage: lang,
       mainEntityOfPage: canonical,
       isPartOf: website,
-      ...(slug === 'blog/continue-google-ai-mode-in-gemini' ? { image } : {}),
+      ...(exportImage || slug === 'blog/continue-google-ai-mode-in-gemini' ? { image } : {}),
     }));
   } else if (slug === 'support') {
     head.push(structuredDataTag({

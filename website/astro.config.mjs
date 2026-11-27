@@ -60,6 +60,21 @@ export default defineConfig({
               slug: 'blog',
             },
             {
+              label: 'Save a conversation',
+              translations: { 'zh-CN': '保存对话', 'zh-TW': '儲存對話', de: 'Unterhaltung speichern', es: 'Guardar una conversación', fr: 'Enregistrer une conversation', ja: '会話を保存する', ko: '대화 저장', 'pt-BR': 'Salvar uma conversa' },
+              slug: 'blog/save-google-ai-mode-conversation',
+            },
+            {
+              label: 'Save as Markdown',
+              translations: { 'zh-CN': '保存为 Markdown', 'zh-TW': '另存為 Markdown', de: 'Als Markdown speichern', es: 'Guardar como Markdown', fr: 'Enregistrer au format Markdown', ja: 'Markdown として保存', ko: 'Markdown으로 저장', 'pt-BR': 'Salvar como Markdown' },
+              slug: 'blog/save-google-ai-mode-as-markdown',
+            },
+            {
+              label: 'Save as PDF',
+              translations: { 'zh-CN': '保存为 PDF', 'zh-TW': '另存為 PDF', de: 'Als PDF speichern', es: 'Guardar como PDF', fr: 'Enregistrer au format PDF', ja: 'PDF として保存', ko: 'PDF로 저장', 'pt-BR': 'Salvar como PDF' },
+              slug: 'blog/save-google-ai-mode-as-pdf',
+            },
+            {
               label: 'Continue in Gemini',
               translations: { 'zh-CN': '在 Gemini 中继续', 'zh-TW': '在 Gemini 中繼續', de: 'In Gemini fortsetzen', es: 'Continuar en Gemini', fr: 'Continuer dans Gemini', ja: 'Gemini で続ける', ko: 'Gemini에서 이어가기', 'pt-BR': 'Continuar no Gemini' },
               slug: 'blog/continue-google-ai-mode-in-gemini',
