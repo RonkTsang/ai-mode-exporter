@@ -37,7 +37,9 @@
     "copyFailed": "Could not copy the selected conversation. Try again.",
     "saveFailed": "Could not download the Markdown file. Try again.",
     "pdf": "PDF…",
-    "printFailed": "Could not open the PDF preview. Try again."
+    "printFailed": "Could not open the PDF preview. Try again.",
+    "help": "Help",
+    "requestFeature": "Request a feature"
   },
   "aiModePrint": {
     "title": "AI Mode conversation",

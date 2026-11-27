@@ -37,7 +37,9 @@
     "copyFailed": "Die ausgewählte Unterhaltung konnte nicht kopiert werden. Bitte erneut versuchen.",
     "saveFailed": "Die Markdown-Datei konnte nicht heruntergeladen werden. Bitte erneut versuchen.",
     "pdf": "PDF…",
-    "printFailed": "Die PDF-Vorschau konnte nicht geöffnet werden. Bitte erneut versuchen."
+    "printFailed": "Die PDF-Vorschau konnte nicht geöffnet werden. Bitte erneut versuchen.",
+    "help": "Hilfe",
+    "requestFeature": "Funktion vorschlagen"
   },
   "aiModePrint": {
     "title": "AI Mode-Unterhaltung",

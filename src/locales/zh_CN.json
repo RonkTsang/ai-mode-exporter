@@ -37,7 +37,9 @@
     "copyFailed": "无法复制所选对话，请重试。",
     "saveFailed": "无法下载 Markdown 文件，请重试。",
     "pdf": "PDF…",
-    "printFailed": "无法打开 PDF 预览，请重试。"
+    "printFailed": "无法打开 PDF 预览，请重试。",
+    "help": "帮助",
+    "requestFeature": "请求新功能"
   },
   "aiModePrint": {
     "title": "AI Mode 对话",

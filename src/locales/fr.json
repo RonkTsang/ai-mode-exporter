@@ -37,7 +37,9 @@
     "copyFailed": "Impossible de copier la conversation sélectionnée. Réessayez.",
     "saveFailed": "Impossible de télécharger le fichier Markdown. Réessayez.",
     "pdf": "PDF…",
-    "printFailed": "Impossible d’ouvrir l’aperçu PDF. Réessayez."
+    "printFailed": "Impossible d’ouvrir l’aperçu PDF. Réessayez.",
+    "help": "Aide",
+    "requestFeature": "Suggérer une fonctionnalité"
   },
   "aiModePrint": {
     "title": "Conversation AI Mode",

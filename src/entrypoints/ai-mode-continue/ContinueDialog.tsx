@@ -1,10 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { Box, Button, Checkbox, Collapsible, Dialog, Flex, Image, Menu, Portal, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Checkbox, Collapsible, Dialog, Flex, Image, Link, Menu, Portal, Stack, Text } from '@chakra-ui/react'
 import { browser } from 'wxt/browser'
 import { i18n } from '#i18n'
 import { AI_MODE_PRINT_MESSAGE, readAiModePrintImageSources } from '@/common/aiModePrint'
 import { aiModeTargetIds, aiModeTargets, type AiModeTarget } from '@/common/aiModeTargets'
 import { AI_MODE_POPUP_OPEN_EVENT, AI_MODE_TRANSFER_MESSAGE, getAiModeAttachmentFilename } from '@/common/aiModeTransfer'
+import { featureRequestUrl, getSupportUrl } from '@/common/supportLinks'
 import { AnswerPreview } from './AnswerPreview'
 import { formatAiModeTranscript, readAiModeConversation, type AiModeConversation, type AiModeTurn } from './dom'
 import chatgptLogo from './logos/chatgpt.png?inline'
@@ -293,27 +294,53 @@ export function ContinueDialog({ main, showEntry = true }: { main: HTMLElement; 
                 )}
               </Dialog.Body>
               <Dialog.Footer
-                flexWrap="wrap"
+                display="grid"
+                gridTemplateColumns="minmax(0, 1fr) auto auto"
+                alignItems="center"
+                columnGap="2"
+                rowGap="3"
                 flexShrink="0"
                 px={{ base: '4', md: '8' }}
                 py="4"
                 borderTopWidth="1px"
                 borderColor="border"
               >
-              <Text role="status" width="full" color="fg.muted" fontSize="sm" srOnly={feedback !== 'copied'}>
-                {feedback === 'copied' ? i18n.t('aiModeContinue.copied') : ''}
-              </Text>
-              {feedback && feedback !== 'copied' && (
-                <Text role="alert" width="full" color="fg.error" fontSize="sm">
-                  {i18n.t(`aiModeContinue.${feedback}`)}
+                <Text role="status" gridColumn="1 / -1" color="fg.muted" fontSize="sm" srOnly={feedback !== 'copied'}>
+                  {feedback === 'copied' ? i18n.t('aiModeContinue.copied') : ''}
                 </Text>
-              )}
-                <Button variant="outline" disabled={busy} onClick={() => setOpen(false)}>
+                {feedback && feedback !== 'copied' && (
+                  <Text role="alert" gridColumn="1 / -1" color="fg.error" fontSize="sm">
+                    {i18n.t(`aiModeContinue.${feedback}`)}
+                  </Text>
+                )}
+                <Flex
+                  gridColumn={{ base: '1 / -1', sm: '1' }}
+                  align="center"
+                  gap="2"
+                  textStyle="xs"
+                  color="fg.muted"
+                  css={{
+                    '& > a': {
+                      minH: '6',
+                      minW: '6',
+                      '@media (pointer: coarse)': { minH: '11', minW: '11' },
+                    },
+                  }}
+                >
+                  <Link href={getSupportUrl(browser.i18n.getUILanguage())} target="_blank" rel="noopener noreferrer" color="inherit">
+                    {i18n.t('aiModeContinue.help')}
+                  </Link>
+                  <Box as="span" aria-hidden="true">·</Box>
+                  <Link href={featureRequestUrl} target="_blank" rel="noopener noreferrer" color="inherit">
+                    {i18n.t('aiModeContinue.requestFeature')}
+                  </Link>
+                </Flex>
+                <Button gridColumn="2" variant="outline" disabled={busy} onClick={() => setOpen(false)}>
                   {i18n.t('common.cancel')}
                 </Button>
               <Menu.Root positioning={{ placement: 'top-end', strategy: 'fixed', gutter: 8, hideWhenDetached: true }}>
                   <Menu.Trigger asChild>
-                    <Button disabled={busy || selection.size === 0} loading={busy}>
+                    <Button gridColumn="3" disabled={busy || selection.size === 0} loading={busy}>
                     {i18n.t('aiModeContinue.continueIn')}
                       <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="m4.5 6.5 3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

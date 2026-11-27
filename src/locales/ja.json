@@ -37,7 +37,9 @@
     "copyFailed": "選択した会話をコピーできませんでした。もう一度お試しください。",
     "saveFailed": "Markdown ファイルをダウンロードできませんでした。もう一度お試しください。",
     "pdf": "PDF…",
-    "printFailed": "PDF プレビューを開けませんでした。もう一度お試しください。"
+    "printFailed": "PDF プレビューを開けませんでした。もう一度お試しください。",
+    "help": "ヘルプ",
+    "requestFeature": "機能をリクエスト"
   },
   "aiModePrint": {
     "title": "AI Mode の会話",
