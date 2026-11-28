@@ -14,6 +14,8 @@ Salve uma seleção do Modo IA do Google em Markdown para ler depois, editar ou 
 
 ![A opção “Salvar como” do AI Mode Exporter](/images/save-as.webp)
 
+As tabelas são exportadas como tabelas Markdown. As imagens compatíveis são mantidas como links para imagens on-line. A exibição depende do leitor de Markdown e da disponibilidade da imagem de origem.
+
 Se quiser apenas copiar o texto para a área de transferência, escolha **Copiar** no menu **Continuar no**. A conversa selecionada será copiada em Markdown.
 
 Mais tutoriais:

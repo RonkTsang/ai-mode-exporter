@@ -14,6 +14,8 @@ Enregistrez une sélection Google AI Mode au format Markdown pour la relire, la 
 
 ![L’option « Enregistrer sous » d’AI Mode Exporter](/images/save-as.webp)
 
+Les tableaux sont exportés au format tableau Markdown. Les images prises en charge restent des liens vers des images en ligne. Leur affichage dépend du lecteur Markdown et de la disponibilité de leur source.
+
 Pour copier uniquement le texte dans le presse-papiers, choisissez **Copier** dans le menu **Continuer dans**. La conversation sélectionnée est copiée au format Markdown.
 
 Autres tutoriels :

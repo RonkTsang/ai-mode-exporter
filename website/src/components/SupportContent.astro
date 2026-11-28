@@ -1,4 +1,6 @@
 ---
+import { featureRequestUrl } from '../../../src/common/supportLinks';
+
 interface Props {
   intro: string;
   emailHeading: string;
@@ -9,6 +11,9 @@ interface Props {
   copyFailedLabel: string;
   subject: string;
   fields: string[];
+  requestHeading: string;
+  requestDescription: string;
+  requestLabel: string;
   communityHeading: string;
   githubDescription: string;
   githubLabel: string;
@@ -57,6 +62,14 @@ const mailto = `mailto:${email}?subject=${encodeURIComponent(copy.subject)}&body
       >{copy.copyLabel}</button>
     </div>
     <p id="support-email-status" class="copy-status" role="status"></p>
+  </section>
+
+  <section class="request-card" aria-labelledby="feature-requests">
+    <h2 id="feature-requests">{copy.requestHeading}</h2>
+    <p>{copy.requestDescription}</p>
+    <a href={featureRequestUrl} target="_blank" rel="noopener noreferrer">
+      {copy.requestLabel} <span aria-hidden="true">↗</span>
+    </a>
   </section>
 
   <section aria-labelledby="community">
@@ -202,6 +215,25 @@ const mailto = `mailto:${email}?subject=${encodeURIComponent(copy.subject)}&body
     border: 1px solid var(--sl-color-accent);
     border-radius: 1rem;
     background: var(--sl-color-accent-low);
+  }
+
+  .request-card {
+    padding: 1.25rem;
+    border: 1px solid var(--sl-color-hairline-shade);
+    border-radius: 0.75rem;
+  }
+
+  .request-card > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    min-block-size: 1.5rem;
+  }
+
+  @media (pointer: coarse) {
+    .request-card > a {
+      min-block-size: 2.75rem;
+    }
   }
 
   .email-address {

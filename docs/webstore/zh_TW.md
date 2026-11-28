@@ -19,7 +19,7 @@ AI Mode Exporter 是一款專為 Google 搜尋 AI 模式（AI Mode）設計的�
 • 整潔的 Markdown 匯出 — 完整保留標題、項目符號與編號清單、連結及表格等結構化 Markdown 格式，讓對話脈絡清晰易讀。
 • 在 Gemini 中繼續對話 — 開啟新的 Gemini 對話，並將您選擇的對話內容以 Markdown（.md）檔案形式附加至草稿輸入框。
 • 在 ChatGPT 中繼續對話 — 開啟新的 ChatGPT 對話，並將您選擇的對話內容插入訊息輸入框（若選取內容較長，可能會以文字附件形式附加）。
-• 送出前由您親自確認 — 系統不會自動送出任何訊息。您可以先檢查匯入的草稿、加上後續提問，確認無誤後再自行送出。
+• 送出前由您親自確認 — 擴充功能不會代您送出聊天訊息。您可以先檢查匯入的草稿、加上後續提問，確認無誤後再自行送出。
 • 支援 9 種語言 — English、Deutsch、Español、Français、日本語、한국어、Português (Brasil)、简体中文與繁體中文。
 
 使用方式
@@ -37,14 +37,16 @@ AI Mode Exporter 是一款專為 Google 搜尋 AI 模式（AI Mode）設計的�
 
 隱私權與權限說明
 
-AI Mode Exporter 不會收集個人資料、追蹤您的瀏覽紀錄，也不會將您的對話傳送至任何第三方伺服器。
+AI Mode Exporter 會讀取 Google 搜尋 AI 模式中的問題與回答，讓您預覽及匯出。擴充功能沒有由開發者營運的後端，不使用分析、廣告或瀏覽紀錄追蹤。
 
-• 暫時性本機儲存 — 您選擇匯出的對話內容僅會在遷移至 Gemini 或 ChatGPT 的過程中暫存於您的裝置本機，並在匯入完成或 10 分鐘後自動清除。
-• 網站存取權限（Google 搜尋、Gemini 與 ChatGPT） — 僅用於在 Google 搜尋頁面顯示「繼續對話…」並讀取您勾選的問答內容，以及在您開啟的 Gemini 或 ChatGPT 頁面中填入新草稿。
+• 工具列搜尋 — 在 Google 搜尋 AI 模式開啟問題時，Google 會收到該問題。
+• 暫時性本機儲存 — 擴充功能會在移轉期間將您選取的內容暫存於本機，並於匯入後刪除記錄。未使用的記錄會在 10 分鐘後到期，並於下次啟動瀏覽器或開始另一項移轉時清除。
+• 網站存取權限（Google 搜尋、Gemini 與 ChatGPT）— 擴充功能會讀取 Google 搜尋 AI 模式中的對話。您選擇目的地後，擴充功能會將選取的問答內容填入該網站的新草稿。目的地服務可能會在您送出前處理草稿或附件。
 
 支援與相關連結
 
 • 官方網站與使用指南：https://ai-mode-exporter.ronktsang.com
+• 隱私權政策：https://ai-mode-exporter.ronktsang.com/zh-tw/privacy/
 • 問題回報與原始碼：https://github.com/RonkTsang/ai-mode-exporter
 • 電子郵件：ronktsang@gmail.com
 

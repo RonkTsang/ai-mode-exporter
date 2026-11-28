@@ -14,6 +14,8 @@ Speichere eine Auswahl aus Google AI Mode als Markdown, um sie später zu lesen,
 
 ![Die Menüoption „Speichern unter“ in AI Mode Exporter](/images/save-as.webp)
 
+Tabellen werden als Markdown-Tabellen exportiert. Unterstützte Bilder bleiben als Links zu Onlinebildern erhalten. Ob sie angezeigt werden, hängt vom Markdown-Viewer und der Erreichbarkeit der Bildquelle ab.
+
 Wenn du den Text nur in die Zwischenablage übernehmen möchtest, wähle im Menü **Weiter mit** die Option **Kopieren**. Sie kopiert die ausgewählte Unterhaltung als Markdown.
 
 Weitere Anleitungen:

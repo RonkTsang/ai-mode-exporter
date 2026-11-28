@@ -1,17 +1,48 @@
 ---
 title: Chrome ツールバーから Google AI モードを開く方法
-description: デスクトップ版 Chrome で AI Mode Exporter を固定し、ツールバーから質問して新しいタブで Google AI モードを開きます。
+description: デスクトップ版 Chrome で AI Mode Exporter をツールバーに固定すると、どの Web ページからでも Google AI モードに質問したり、複数行のプロンプトを書いたり、開いている AI モードのチャットをポップアップから続けたりできます。
 ---
 
-AI Mode Exporter を使うと、今見ているページを開いたまま、Chrome ツールバーから Google 検索の AI モードを始められます。
+AI Mode Exporter は、Chrome のツールバーにクイック検索ボックスを追加します。今見ているページを離れることなく、どの Web ページからでも Google 検索の AI モードで会話を始められます。質問は新しい AI モードのタブで開くため、現在のタブはそのまま残ります。
 
-## 拡張機能を固定して最初の質問をする
+## Chrome ツールバーに拡張機能を固定する
 
-1. [デスクトップ版 Chrome に AI Mode Exporter をインストール](/ja/guide/install-and-troubleshoot/#ソースからインストールする)します。
-2. Chrome ツールバーの**拡張機能**メニューを開き、**AI Mode Exporter**を固定します。
-3. 拡張機能のアイコンをクリックして質問を入力し、**Enter**キーを押すか検索アイコンをクリックします。「台北で雨の日に車なしで楽しめる週末の過ごし方は？」などと聞いてみましょう。
-4. 新しく開いた Google AI モードのタブで会話を続けます。**続ける…**を使って、会話を[Gemini](/ja/blog/continue-google-ai-mode-in-gemini/)または[ChatGPT](/ja/blog/continue-google-ai-mode-in-chatgpt/)に引き継ぐこともできます。
+Chrome では、新しくインストールした拡張機能はデフォルトで**拡張機能**メニュー内に隠れています。AI Mode Exporter を固定しておくと、ワンクリックでいつでも呼び出せます。
 
-## AI モードが読み込まれない場合
+1. まだの場合は、[デスクトップ版 Chrome に AI Mode Exporter をインストール](/ja/guide/install-and-troubleshoot/#ソースからインストールする)します。
+2. ツールバー右上にある Chrome の**拡張機能**アイコン（パズルのピースのアイコン）をクリックします。
+3. **AI Mode Exporter** の横にあるピンアイコンをクリックして、ツールバーにアイコンを常に表示させます。
 
-同じ Chrome プロフィールで[Google AI モードを直接開き](https://www.google.com/search?udm=50)、Google のログインや確認画面が表示されたら手順に従ってください。直接開くと使えるのにツールバー検索から開けない場合は、[サポートに問い合わせてください](/ja/support/)。
+## どのページからでも Google AI モードに質問する
+
+1. ツールバーに固定した **AI Mode Exporter** のアイコンをクリックします。**AI Mode に質問**の入力欄に自動でフォーカスが当たるため、すぐに入力を始められます。
+2. 質問を入力します（例：*「台北で雨の日に車なしで楽しめる週末の過ごし方は？」*）。
+3. **Enter** キーを押すか検索アイコンをクリックすると、新しい Google AI モードのタブで質問が開きます。
+
+![固定した AI Mode Exporter アイコンをクリックすると、「AI Mode に質問」検索欄のあるポップアップが開きます](/images/toolbar-popup.webp)
+
+:::tip[複数行の質問を入力するには]
+送信せずに改行するには、macOS では **Cmd + Enter**、Windows および Linux では **Ctrl + Enter** を押します。入力欄は入力内容に合わせて自動的に広がります。
+:::
+
+## ポップアップから開いている AI モードのチャットを続ける・保存する
+
+すでに Google AI モードのタブを開いている状態でツールバーのポップアップを開くと、検索ボックスの下に**このチャットを続ける…**ボタンも表示されます。
+
+![AI モードのタブ上では、拡張機能のポップアップに「このチャットを続ける…」オプションが表示されます](/images/toolbar-popup-continue.webp)
+
+回答が完了するのを待ってから**このチャットを続ける…**をクリックすると、選択ダイアログが開き、次の操作を行えます。
+
+- [選択したやり取りを Gemini](/ja/blog/continue-google-ai-mode-in-gemini/) または [ChatGPT](/ja/blog/continue-google-ai-mode-in-chatgpt/) に引き継いで続ける。
+- [会話を Markdown または PDF として保存](/ja/blog/save-google-ai-mode-conversation/)する、またはクリップボードにコピーする。
+
+:::note[ページ内ボタンが消えたときの組み込みバックアップ]
+Google が AI モードのページレイアウトを更新した際、ページ内の**続ける…**ボタンが一時的に表示されなくなることがあります。その場合でも、ツールバーのポップアップにある**このチャットを続ける…**を使えば、まったく同じダイアログを開くことができます。
+:::
+
+## トラブルシューティング
+
+- **ツールバーから AI モードが読み込まれない：** 同じ Chrome プロフィールで [Google AI モードを直接開き](https://www.google.com/search?udm=50)、Google へのログインや確認画面が表示された場合は完了してください。
+- **「このチャットを続ける…」が表示されない：** アクティブな Google AI モードのタブ（`www.google.com`）を開いているか確認し、拡張機能のインストール・更新・再有効化の後はタブを再読み込みしてください。
+
+直接開くと使えるのにツールバーのポップアップが動作しない場合は、[インストールとトラブルシューティングガイド](/ja/guide/install-and-troubleshoot/)を確認するか、[開発者に問い合わせ](/ja/support/)てください。

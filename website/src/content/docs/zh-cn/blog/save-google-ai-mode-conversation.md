@@ -8,10 +8,16 @@ description: 在 AI Mode Exporter 中选择要保留的 Google AI 模式问答�
 ## 打开「另存为」菜单
 
 1. [安装 AI Mode Exporter](/zh-cn/guide/install-and-troubleshoot/#从源代码安装)，打开一段 [Google AI 模式](https://www.google.com/search?udm=50)对话，等待回答完成。
-2. 点击输入框上方的**继续对话…**。勾选要保存的问答，或点击**全选**。点击**展开回答**可以预先查看内容。
+2. 点击输入框上方的**继续对话…**。勾选要保存的问答，或点击**全选**。
 3. 点击对话框右下角的**在其他平台继续**，打开**另存为**子菜单。
 
 ![AI Mode Exporter 的另存为菜单提供 Markdown 和 PDF 选项](/images/save-as.webp)
+
+## 预览图片和表格
+
+导出时可以保留所选回答中的表格和受支持的图片，包括图片组。导出前，点击**展开回答**即可检查这一轮的内容。
+
+![在 AI Mode Exporter 中展开一轮回答后，正文上方显示图片组](/images/support-images.webp)
 
 ## 选择导出格式
 

@@ -1,20 +1,89 @@
 ---
 title: Schnellstart
-description: So verwendest du die Erweiterung in drei Schritten.
+description: In wenigen Minuten mit AI Mode Exporter starten – Google-AI-Mode-Gespräche in Gemini oder ChatGPT fortsetzen, als Markdown oder PDF speichern und über die Chrome-Symbolleiste suchen.
 ---
 
-Du verwendest die Erweiterung zum ersten Mal? [Installiere AI Mode Exporter aus dem Quellcode](/de/guide/install-and-troubleshoot/).
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-So verwendest du die Erweiterung in drei Schritten.
+Mit AI Mode Exporter erledigst du drei Dinge im Google-Such-AI-Mode: ausgewählte Fragen und Antworten **in Gemini oder ChatGPT fortsetzen**, sie **als Markdown oder PDF speichern oder kopieren** und von jedem Tab aus **über die Chrome-Symbolleiste eine neue AI-Mode-Suche starten**.
 
-1. Stelle eine Frage in Google AI Mode und warte, bis die Antwort fertig ist.
+:::note[Bevor du beginnst]
+- **Erweiterung installieren**: Falls noch nicht geschehen, [installiere AI Mode Exporter aus dem Quellcode](/de/guide/install-and-troubleshoot/) in Desktop-Chrome.
+- **Vorab anmelden**: Melde dich bei [Gemini](https://gemini.google.com/) oder [ChatGPT](https://chatgpt.com/) an, wenn du Unterhaltungen dort fortsetzen möchtest.
+:::
 
-![Schaltfläche zum Fortsetzen der Unterhaltung über dem Eingabefeld](/images/onboarding-entry.png)
-2. Klicke auf „Weiter mit…“, wähle die Fragen und Antworten aus und klicke auf „Weiter mit“.
+## Unterhaltung in Gemini oder ChatGPT fortsetzen
 
-![Dialog zur Auswahl von Fragen und Antworten mit dem Menü „Weiter mit“](/images/onboarding-selection.png)
-3. Wähle Gemini oder ChatGPT. Prüfe den importierten Entwurf und sende ihn selbst.
+<Steps>
 
-![Ausgewählte AI-Mode-Unterhaltung als Gemini-Entwurf](/images/onboarding-gemini.png)
+1. **Eine Frage in Google AI Mode stellen**
 
-Weitere [Schritt-für-Schritt-Anleitungen](/de/blog/) erklären die Nutzung mit Gemini, ChatGPT und der Chrome-Symbolleiste. Wenn die Übertragung hängen bleibt, findest du Hilfe in der [Installations- und Fehlerbehebungshilfe](/de/guide/install-and-troubleshoot/).
+   Öffne [Google AI Mode](https://www.google.com/search?udm=50), stelle eine Frage und warte, bis die Antwort vollständig generiert ist. Danach erscheint über dem Eingabefeld die Schaltfläche **Weiter mit…**.
+
+   ![Schaltfläche zum Fortsetzen der Unterhaltung über dem Eingabefeld](/images/onboarding-entry.webp)
+
+2. **Gewünschte Fragen und Antworten auswählen**
+
+   Klicke auf **Weiter mit…**, um den Auswahldialog zu öffnen. Markiere die gewünschten Einträge (oder klicke auf **Alle auswählen**), öffne unten rechts das Menü **Weiter mit** und wähle **Gemini** oder **ChatGPT**.
+
+   ![Dialog zur Auswahl von Fragen und Antworten mit dem Menü Weiter mit](/images/onboarding-selection.webp)
+
+3. **Entwurf prüfen und absenden**
+
+   Eine neue Unterhaltung öffnet sich mit deinem ausgewählten Kontext als Entwurf – **nichts wird automatisch gesendet**. Prüfe den importierten Inhalt, ergänze deine nächste Frage und sende ihn ab, sobald du bereit bist.
+
+   ![Ausgewählte AI-Mode-Unterhaltung als Gemini-Entwurf](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[Was dich auf den Plattformen erwartet]
+Gemini hängt deine Auswahl als Markdown-Datei an. ChatGPT fügt sie direkt in das Eingabefeld ein (längere Inhalte werden gegebenenfalls als Textanhang übernommen).
+:::
+
+## Unterhaltung speichern oder kopieren
+
+Du musst nicht die Plattform wechseln, um hilfreiche Antworten aufzubewahren. Über dasselbe Menü **Weiter mit** unten rechts im Auswahldialog kannst du Inhalte auch lokal exportieren:
+
+- **Kopieren** – kopiert die ausgewählten Einträge als Markdown in die Zwischenablage.
+- [**Speichern unter → Markdown**](/de/blog/save-google-ai-mode-as-markdown/) – lädt eine `.md`-Datei für deine Notizen-App herunter.
+- [**Speichern unter → PDF…**](/de/blog/save-google-ai-mode-as-pdf/) – öffnet eine übersichtliche lokale Vorschau zum Drucken oder Speichern als PDF.
+
+![Das Untermenü Speichern unter mit den Optionen Markdown und PDF](/images/save-as.webp)
+
+## Das Chrome-Symbolleisten-Popup nutzen
+
+Wenn du die Erweiterung an die Chrome-Symbolleiste anheftest, hast du zwei praktische Funktionen mit einem Klick griffbereit:
+
+1. Klicke oben rechts in Chrome auf das **Erweiterungen**-Symbol (Puzzleteil).
+2. Klicke auf die Stecknadel neben **AI Mode Exporter**, damit das Symbol dauerhaft sichtbar bleibt.
+
+### Von jeder Seite aus AI Mode fragen
+
+Klicke auf einer beliebigen Webseite auf das angeheftete **AI Mode Exporter**-Symbol, gib deine Frage in **AI Mode fragen** ein und drücke **Enter** (oder klicke auf das Suchsymbol). Google AI Mode öffnet deine Suche in einem neuen Tab, während deine aktuelle Seite geöffnet bleibt.
+
+![AI Mode Exporter ist an die Chrome-Symbolleiste angeheftet und zeigt das Suchfeld im Popup](/images/toolbar-popup.webp)
+
+### Ausweichweg, falls die Schaltfläche auf der Seite fehlt
+
+:::tip[Siehst du „Weiter mit…“ nicht auf der Seite?]
+Google ändert gelegentlich das Layout von AI Mode, wodurch die Schaltfläche auf der Seite vorübergehend verschwinden kann. Das Popup in der Symbolleiste dient jederzeit als Ausweichweg.
+:::
+
+Wechsle zu deinem Google-AI-Mode-Tab mit fertiger Antwort, klicke auf das **AI Mode Exporter**-Symbol in der Symbolleiste und wähle **Chat fortsetzen…**. Es öffnet sich derselbe Auswahldialog zum Fortsetzen in Gemini oder ChatGPT sowie zum Speichern.
+
+![AI Mode Exporter Popup im Google-AI-Mode-Tab mit der Schaltfläche Chat fortsetzen](/images/toolbar-popup-continue.webp)
+
+## Nächste Schritte
+
+<CardGrid>
+  <LinkCard
+    title="Schritt-für-Schritt-Anleitungen"
+    description="Ausführliche Guides für Gemini, ChatGPT, Markdown, PDF und die Symbolleistensuche."
+    href="/de/blog/"
+  />
+  <LinkCard
+    title="Installation und Fehlerbehebung"
+    description="Hilfe bei fehlender Schaltfläche, leerem Entwurf und Installationsschritten."
+    href="/de/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

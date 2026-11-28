@@ -17,6 +17,12 @@ AI Mode Exporter를 사용하면 Google AI 모드 대화에서 선택한 질문�
 
 텍스트만 클립보드에 복사하려면 **계속할 플랫폼** 메뉴에서 **복사**를 선택하세요. 선택한 대화가 Markdown 형식으로 복사됩니다.
 
+## 이미지와 표 미리보기
+
+답변에서 지원되는 이미지와 이미지 갤러리, 표가 내보내기에 포함됩니다. 내보내기 전에 **답변 표시**를 눌러 내용을 확인하세요.
+
+![AI Mode Exporter 대화상자에서 이미지 갤러리와 텍스트가 포함된 펼쳐진 답변](/images/support-images.webp)
+
 관련 튜토리얼:
 
 - [Markdown으로 저장하는 방법](/ko/blog/save-google-ai-mode-as-markdown/)

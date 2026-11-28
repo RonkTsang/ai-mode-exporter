@@ -19,7 +19,7 @@ QUÉ PUEDES HACER
 • Exportación limpia a Markdown — Conserva encabezados, listas con viñetas y numeradas, enlaces y tablas en un Markdown bien estructurado para que tu contexto sea fácil de leer.
 • Continuar en Gemini — Abre un nuevo chat de Gemini y adjunta la conversación seleccionada como un archivo Markdown (.md) en el borrador.
 • Continuar en ChatGPT — Abre un nuevo chat de ChatGPT e inserta la conversación seleccionada en el cuadro de mensaje (las selecciones más largas pueden aparecer como un archivo de texto adjunto).
-• Tú revisas antes de enviar — No se envía nada automáticamente. Revisa el borrador importado, añade tu siguiente indicación y envíalo cuando estés listo.
+• Tú revisas antes de enviar — La extensión no envía mensajes de chat por ti. Revisa el borrador importado, añade tu siguiente indicación y envíalo cuando estés listo.
 • Disponible en 9 idiomas — English, Deutsch, Español, Français, 日本語, 한국어, Português (Brasil), 简体中文 y 繁體中文.
 
 CÓMO USARLO
@@ -37,14 +37,16 @@ IDEAL PARA
 
 PRIVACIDAD Y PERMISOS
 
-AI Mode Exporter no recopila datos personales, no rastrea tu navegación ni envía tus conversaciones a servidores de terceros.
+AI Mode Exporter lee las preguntas y respuestas de Google AI Mode para que puedas previsualizarlas y exportarlas. La extensión no tiene un servidor operado por el desarrollador y no utiliza analítica, publicidad ni seguimiento del historial de navegación.
 
-• Almacenamiento local temporal — Tu selección exportada se guarda localmente en tu dispositivo únicamente durante la transferencia a Gemini o ChatGPT y se elimina automáticamente tras importarse o después de 10 minutos.
-• Acceso a sitios (Búsqueda de Google, Gemini y ChatGPT) — Se utiliza únicamente en la Búsqueda de Google para mostrar "Continuar en…" y leer los turnos que selecciones, y en Gemini o ChatGPT para rellenar el nuevo borrador que abras.
+• Búsqueda desde la barra de herramientas — Google recibe tu pregunta cuando se abre en Google AI Mode.
+• Almacenamiento local temporal — La extensión guarda tu selección localmente para transferirla. El registro se elimina tras importarla. Los registros sin usar caducan a los 10 minutos y se limpian al iniciar de nuevo el navegador o al comenzar otra transferencia.
+• Acceso a sitios (Búsqueda de Google, Gemini y ChatGPT) — La extensión lee las conversaciones de Google AI Mode. Cuando eliges un destino, inserta los turnos seleccionados en un borrador de ese sitio. El servicio de destino puede procesar el borrador o el archivo antes de que lo envíes.
 
 SOPORTE Y ENLACES
 
 • Sitio web y guía: https://ai-mode-exporter.ronktsang.com
+• Política de privacidad: https://ai-mode-exporter.ronktsang.com/es/privacy/
 • Reporte de errores y código fuente: https://github.com/RonkTsang/ai-mode-exporter
 • Correo electrónico: ronktsang@gmail.com
 

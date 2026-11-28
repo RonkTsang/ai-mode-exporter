@@ -17,6 +17,12 @@ AI Mode Exporter vous permet d’enregistrer sur votre appareil une sélection d
 
 Pour copier uniquement le texte dans le presse-papiers, choisissez **Copier** dans le menu **Continuer dans**. La conversation sélectionnée est copiée au format Markdown.
 
+## Vérifier les images et les tableaux
+
+Les images prises en charge, y compris celles des galeries, et les tableaux sont inclus dans l’exportation. Cliquez sur **Afficher la réponse** pour vérifier le contenu avant de l’exporter.
+
+![Réponse développée avec une galerie d’images et du texte dans la fenêtre AI Mode Exporter](/images/support-images.webp)
+
 Autres tutoriels :
 
 - [Enregistrer au format Markdown](/fr/blog/save-google-ai-mode-as-markdown/)

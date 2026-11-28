@@ -19,7 +19,7 @@ FUNKTIONEN
 • Sauberer Markdown-Export — Übernimmt Überschriften, Aufzählungen, nummerierte Listen, Links und Tabellen in strukturiertem Markdown, damit dein Kontext übersichtlich und lesbar bleibt.
 • In Gemini fortsetzen — Öffnet einen neuen Gemini-Chat und fügt deine ausgewählte Unterhaltung als Markdown-Datei (.md) im Eingabefeld des Entwurfs an.
 • In ChatGPT fortsetzen — Öffnet einen neuen ChatGPT-Chat und fügt deine ausgewählte Unterhaltung in das Nachrichtenfeld ein (längere Auswahlen können als Textanhang erscheinen).
-• Kontrolle vor dem Absenden — Nichts wird automatisch gesendet. Prüfe den importierten Entwurf, ergänze deine Anschlussfrage und sende erst ab, wenn alles passt.
+• Kontrolle vor dem Absenden — Die Erweiterung sendet keine Chatnachricht für dich ab. Prüfe den importierten Entwurf, ergänze deine Anschlussfrage und sende erst ab, wenn alles passt.
 • In 9 Sprachen verfügbar — English, Deutsch, Español, Français, 日本語, 한국어, Português (Brasil), 简体中文 und 繁體中文.
 
 SO FUNKTIONIERT’S
@@ -37,14 +37,16 @@ IDEAL FÜR
 
 DATENSCHUTZ & BERECHTIGUNGEN
 
-AI Mode Exporter erhebt keine personenbezogenen Daten, verfolgt dein Surfverhalten nicht und sendet deine Unterhaltungen an keine Server von Drittanbietern.
+AI Mode Exporter liest Fragen und Antworten auf Google AI Mode, damit du sie ansehen und exportieren kannst. Die Erweiterung hat kein vom Entwickler betriebenes Backend und verwendet weder Analyse noch Werbung oder Tracking des Browserverlaufs.
 
-• Temporäre lokale Speicherung — Dein ausgewählter Export wird nur während der Übergabe an Gemini oder ChatGPT lokal auf deinem Gerät gespeichert und nach dem Import oder spätestens nach 10 Minuten automatisch gelöscht.
-• Website-Zugriff (Google Suche, Gemini und ChatGPT) — Wird ausschließlich auf der Google Suche verwendet, um „Weiter mit…“ anzuzeigen und die von dir ausgewählten Runden auszulesen, sowie in Gemini oder ChatGPT, um den neu geöffneten Entwurf zu befüllen.
+• Suche über die Symbolleiste — Deine Frage wird beim Öffnen der Google-Suche-AI-Modus-Seite an Google übermittelt.
+• Temporäre lokale Speicherung — Deine Auswahl wird für die Übergabe lokal gespeichert. Nach dem Import wird der Eintrag gelöscht. Nicht verwendete Einträge verfallen nach 10 Minuten und werden beim nächsten Browserstart oder einer weiteren Übertragung bereinigt.
+• Website-Zugriff (Google Suche, Gemini und ChatGPT) — Die Erweiterung liest Unterhaltungen in Google AI Mode. Wenn du ein Ziel auswählst, fügt sie deine ausgewählten Runden in einen Entwurf auf dieser Website ein. Der Zieldienst kann den Entwurf oder Anhang vor dem Senden verarbeiten.
 
 SUPPORT & LINKS
 
 • Website & Anleitung: https://ai-mode-exporter.ronktsang.com
+• Datenschutzerklärung: https://ai-mode-exporter.ronktsang.com/de/privacy/
 • Fehlerberichte & Quellcode: https://github.com/RonkTsang/ai-mode-exporter
 • E-Mail: ronktsang@gmail.com
 

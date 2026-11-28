@@ -14,6 +14,8 @@ Guarda una selección del Modo IA de Google como Markdown para leerla más tarde
 
 ![La opción «Guardar como» de AI Mode Exporter](/images/save-as.webp)
 
+Las tablas se exportan como tablas Markdown. Las imágenes compatibles se conservan como enlaces a imágenes en línea. Su visualización depende del visor Markdown y de que la imagen de origen siga disponible.
+
 Si solo quieres copiar el texto al portapapeles, selecciona **Copiar** en el menú **Continuar en**. Se copiará la conversación seleccionada en formato Markdown.
 
 Más tutoriales:

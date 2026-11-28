@@ -1,20 +1,89 @@
 ---
 title: Início rápido
-description: Continue uma conversa do Modo IA no Gemini ou no ChatGPT.
+description: "Comece a usar o AI Mode Exporter em minutos: continue conversas do Modo IA do Google no Gemini ou no ChatGPT, salve em Markdown ou PDF e pesquise pela barra do Chrome."
 ---
 
-Vai usar a extensão pela primeira vez? [Instale o AI Mode Exporter a partir do código-fonte](/pt-br/guide/install-and-troubleshoot/#instalar-a-partir-do-código-fonte).
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-1. Abra o [Modo IA do Google](https://www.google.com/search?udm=50), faça uma pergunta e aguarde o fim da resposta.
+Com o AI Mode Exporter, você faz três coisas no Modo IA da Busca do Google: **continuar** perguntas e respostas selecionadas no Gemini ou no ChatGPT, **salvar ou copiar** o conteúdo em Markdown ou PDF e **iniciar uma nova pesquisa no Modo IA** a partir de qualquer guia pela barra do Chrome.
 
-   ![Botão para continuar acima do campo de entrada do Modo IA](/images/onboarding-entry.png)
+:::note[Antes de começar]
+- **Instale a extensão** no Chrome para computador se ainda não instalou: [Instale o AI Mode Exporter a partir do código-fonte](/pt-br/guide/install-and-troubleshoot/#instalar-a-partir-do-código-fonte).
+- **Faça login com antecedência** no [Gemini](https://gemini.google.com/) ou no [ChatGPT](https://chatgpt.com/) se pretende continuar conversas por lá.
+:::
 
-2. Clique em **Continuar em…**, selecione as perguntas e respostas desejadas e escolha **Gemini** ou **ChatGPT** em **Continuar no**.
+## Continue uma conversa no Gemini ou no ChatGPT
 
-   ![Seleção de perguntas e escolha de um destino](/images/onboarding-selection.png)
+<Steps>
 
-3. Confira o rascunho importado na nova conversa, escreva sua próxima pergunta e envie quando quiser.
+1. **Faça uma pergunta no Modo IA do Google**
 
-   ![Uma conversa importada anexada a um rascunho do Gemini](/images/onboarding-gemini.png)
+   Abra o [Modo IA do Google](https://www.google.com/search?udm=50), faça sua pergunta e aguarde a resposta terminar de ser gerada. Quando ela finalizar, o botão **Continuar em…** aparece acima do campo de entrada.
 
-Veja os [tutoriais passo a passo](/pt-br/blog/) sobre Gemini, ChatGPT e a pesquisa pela barra de ferramentas do Chrome. Se a transferência travar, consulte [Instalação e solução de problemas](/pt-br/guide/install-and-troubleshoot/).
+   ![Botão para continuar acima do campo de entrada do Modo IA](/images/onboarding-entry.webp)
+
+2. **Escolha os turnos que deseja levar**
+
+   Clique em **Continuar em…** para abrir a janela de seleção. Marque as perguntas e respostas que quer manter (ou clique em **Selecionar tudo**), abra o menu **Continuar no** no canto inferior direito e escolha **Gemini** ou **ChatGPT**.
+
+   ![Seleção de perguntas e escolha de um destino](/images/onboarding-selection.webp)
+
+3. **Revise o rascunho e envie**
+
+   Uma nova conversa é aberta com o contexto selecionado já anexado como rascunho — **nada é enviado automaticamente**. Confira o conteúdo importado, escreva sua próxima pergunta e envie quando estiver pronto.
+
+   ![Uma conversa importada anexada a um rascunho do Gemini](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[O que esperar em cada plataforma]
+O Gemini anexa sua seleção como um arquivo Markdown. O ChatGPT insere o conteúdo diretamente na caixa de mensagem (e pode transformar seleções longas em um anexo de texto).
+:::
+
+## Salve ou copie uma conversa
+
+Você não precisa trocar de plataforma para guardar uma boa resposta. No mesmo menu **Continuar no**, no canto inferior direito da janela de seleção, também é possível exportar localmente:
+
+- **Copiar** — copia os turnos selecionados para a área de transferência em formato Markdown.
+- [**Salvar como → Markdown**](/pt-br/blog/save-google-ai-mode-as-markdown/) — baixa um arquivo `.md` pronto para o seu app de notas.
+- [**Salvar como → PDF…**](/pt-br/blog/save-google-ai-mode-as-pdf/) — abre uma prévia local limpa para imprimir ou salvar a conversa em PDF.
+
+![O submenu Salvar como mostrando as opções Markdown e PDF](/images/save-as.webp)
+
+## Use a janela pop-up na barra do Chrome
+
+Fixar a extensão na barra de ferramentas do Chrome deixa dois atalhos práticos a um clique de distância:
+
+1. Clique no ícone **Extensões** do Chrome (a peça de quebra-cabeça) no canto superior direito.
+2. Clique no ícone de alfinete ao lado de **AI Mode Exporter** para mantê-lo visível na barra.
+
+### Pergunte ao Modo IA de qualquer página
+
+Em qualquer site, clique no ícone fixado do **AI Mode Exporter**, digite sua pergunta em **Perguntar ao AI Mode** e pressione **Enter** (ou clique no ícone de pesquisa). O Modo IA do Google abre a pesquisa em uma nova guia, mantendo sua página atual aberta.
+
+![AI Mode Exporter fixado na barra do Chrome e janela pop-up com o campo de pesquisa](/images/toolbar-popup.webp)
+
+### Alternativa quando o botão da página desaparecer
+
+:::tip[Não encontrou o botão “Continuar em…” na página?]
+O Google altera ocasionalmente o layout do Modo IA, o que pode ocultar temporariamente o botão na página. Você sempre pode usar a janela pop-up como alternativa.
+:::
+
+Com a guia do Modo IA do Google aberta e a resposta concluída, clique no ícone do **AI Mode Exporter** na barra e escolha **Continuar este chat…**. Ele abre exatamente o mesmo seletor para continuar no Gemini ou no ChatGPT ou salvar a conversa.
+
+![Janela pop-up do AI Mode Exporter no Modo IA do Google com o botão Continuar este chat](/images/toolbar-popup-continue.webp)
+
+## Próximos passos
+
+<CardGrid>
+  <LinkCard
+    title="Tutoriais passo a passo"
+    description="Guias detalhados sobre Gemini, ChatGPT, Markdown, PDF e pesquisa pela barra do Chrome."
+    href="/pt-br/blog/"
+  />
+  <LinkCard
+    title="Instalação e solução de problemas"
+    description="Resolva botão ausente, rascunho vazio ou consulte as etapas de instalação."
+    href="/pt-br/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

@@ -14,6 +14,10 @@ Use AI Mode Exporter to save Google AI Mode questions and answers as a Markdown 
 
 ![The Save as submenu shows Markdown as a download option](/images/save-as.webp)
 
+## How Markdown handles images and tables
+
+Tables are saved as Markdown tables. Supported images are saved as references to their online URLs. To see them in the rendered document, use a Markdown viewer that supports tables and can load the image URLs.
+
 ## Copy Markdown to the clipboard
 
 With your turns selected, choose **Copy** from the **Continue in** menu, then paste the Markdown into your editor.

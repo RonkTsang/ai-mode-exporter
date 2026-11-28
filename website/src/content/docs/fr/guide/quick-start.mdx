@@ -1,20 +1,89 @@
 ---
 title: Démarrage rapide
-description: Utilisez l’extension en trois étapes.
+description: "Prenez en main AI Mode Exporter en quelques minutes : poursuivez vos discussions Google AI Mode dans Gemini ou ChatGPT, enregistrez-les en Markdown ou PDF et recherchez depuis Chrome."
 ---
 
-Vous utilisez l’extension pour la première fois ? [Installez AI Mode Exporter depuis les sources](/fr/guide/install-and-troubleshoot/).
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-Utilisez l’extension en trois étapes.
+AI Mode Exporter vous permet de faire trois choses dans le mode IA de Google : **poursuivre** les questions et réponses de votre choix dans Gemini ou ChatGPT, les **enregistrer ou copier** au format Markdown ou PDF, et **lancer une nouvelle recherche AI Mode** depuis n’importe quel onglet via la barre d’outils Chrome.
 
-1. Posez une question dans le mode IA de Google et attendez la fin de la réponse.
+:::note[Avant de commencer]
+- **Installez l’extension** dans Chrome sur ordinateur si ce n’est pas encore fait : [Installez AI Mode Exporter depuis les sources](/fr/guide/install-and-troubleshoot/).
+- **Connectez-vous à l’avance** à [Gemini](https://gemini.google.com/) ou [ChatGPT](https://chatgpt.com/) si vous prévoyez d’y poursuivre vos échanges.
+:::
 
-![Bouton pour poursuivre la conversation au-dessus de la zone de saisie](/images/onboarding-entry.png)
-2. Cliquez sur « Continuer avec… », sélectionnez les questions et réponses, puis cliquez sur « Continuer dans ».
+## Poursuivre une conversation dans Gemini ou ChatGPT
 
-![Fenêtre de sélection des questions et réponses avec le menu « Continuer dans »](/images/onboarding-selection.png)
-3. Choisissez Gemini ou ChatGPT. Vérifiez le brouillon importé et envoyez-le vous-même.
+<Steps>
 
-![Conversation AI Mode sélectionnée sous forme de brouillon dans Gemini](/images/onboarding-gemini.png)
+1. **Posez une question dans le mode IA de Google**
 
-Consultez les [tutoriels pas à pas](/fr/blog/) pour Gemini, ChatGPT et la barre d’outils Chrome. Si le transfert reste bloqué, consultez le [guide d’installation et de dépannage](/fr/guide/install-and-troubleshoot/).
+   Ouvrez le [mode IA de Google](https://www.google.com/search?udm=50), posez votre question et attendez la fin de la réponse. Une fois celle-ci terminée, le bouton **Continuer avec…** apparaît au-dessus de la zone de saisie.
+
+   ![Bouton pour poursuivre la conversation au-dessus de la zone de saisie](/images/onboarding-entry.webp)
+
+2. **Sélectionnez les échanges à emporter**
+
+   Cliquez sur **Continuer avec…** pour ouvrir la fenêtre de sélection. Cochez les questions et réponses souhaitées (ou cliquez sur **Tout sélectionner**), puis ouvrez le menu **Continuer dans** en bas à droite et choisissez **Gemini** ou **ChatGPT**.
+
+   ![Fenêtre de sélection des questions et réponses avec le menu Continuer dans](/images/onboarding-selection.webp)
+
+3. **Vérifiez le brouillon et envoyez**
+
+   Une nouvelle conversation s’ouvre avec votre sélection déjà préparée en brouillon : **rien n’est envoyé automatiquement**. Relisez le contenu importé, ajoutez votre question suivante et envoyez-la quand vous êtes prêt.
+
+   ![Conversation AI Mode sélectionnée sous forme de brouillon dans Gemini](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[Ce qui s’affiche sur chaque plateforme]
+Gemini joint votre sélection sous forme de fichier Markdown. ChatGPT l’insère directement dans la zone de saisie (et peut convertir les sélections longues en pièce jointe texte).
+:::
+
+## Enregistrer ou copier une conversation
+
+Inutile de changer de plateforme pour conserver une réponse utile. Depuis le même menu **Continuer dans** en bas à droite de la fenêtre de sélection, vous pouvez aussi exporter en local :
+
+- **Copier** — copie les échanges sélectionnés dans le presse-papiers au format Markdown.
+- [**Enregistrer sous → Markdown**](/fr/blog/save-google-ai-mode-as-markdown/) — télécharge un fichier `.md` prêt pour votre application de notes.
+- [**Enregistrer sous → PDF…**](/fr/blog/save-google-ai-mode-as-pdf/) — ouvre un aperçu local soigné pour imprimer ou enregistrer la conversation en PDF.
+
+![Le sous-menu Enregistrer sous présentant les options Markdown et PDF](/images/save-as.webp)
+
+## Utiliser la fenêtre contextuelle de la barre d’outils Chrome
+
+Épingler l’extension dans la barre d’outils Chrome met deux raccourcis pratiques à portée de clic :
+
+1. Cliquez sur l’icône **Extensions** de Chrome (la pièce de puzzle) en haut à droite.
+2. Cliquez sur l’épingle à côté d’**AI Mode Exporter** pour garder son icône visible.
+
+### Interroger AI Mode depuis n’importe quelle page
+
+Depuis n’importe quel site, cliquez sur l’icône épinglée d’**AI Mode Exporter**, saisissez votre question dans **Demander à AI Mode**, puis appuyez sur **Entrée** (ou cliquez sur l’icône de recherche). Google AI Mode s’ouvre dans un nouvel onglet tout en conservant votre page actuelle.
+
+![AI Mode Exporter épinglé dans la barre d’outils Chrome et champ de recherche dans sa fenêtre contextuelle](/images/toolbar-popup.webp)
+
+### Solution de repli si le bouton de la page disparaît
+
+:::tip[Le bouton « Continuer avec… » n’apparaît pas sur la page ?]
+Google modifie parfois la mise en page d’AI Mode, ce qui peut masquer temporairement le bouton intégré. La fenêtre contextuelle sert toujours d’accès de secours.
+:::
+
+Sur un onglet Google AI Mode dont la réponse est terminée, cliquez sur l’icône **AI Mode Exporter** dans la barre d’outils et choisissez **Continuer cette conversation…**. Vous retrouverez exactement la même fenêtre de sélection pour poursuivre dans Gemini ou ChatGPT ou enregistrer l’échange.
+
+![Fenêtre contextuelle AI Mode Exporter dans Google AI Mode avec le bouton Continuer cette conversation](/images/toolbar-popup-continue.webp)
+
+## Étapes suivantes
+
+<CardGrid>
+  <LinkCard
+    title="Tutoriels pas à pas"
+    description="Guides détaillés pour Gemini, ChatGPT, Markdown, PDF et la recherche depuis Chrome."
+    href="/fr/blog/"
+  />
+  <LinkCard
+    title="Installation et dépannage"
+    description="Résolvez un bouton manquant, un brouillon vide ou consultez les étapes d’installation."
+    href="/fr/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

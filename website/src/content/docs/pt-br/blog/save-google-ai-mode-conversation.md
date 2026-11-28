@@ -17,6 +17,12 @@ O AI Mode Exporter permite salvar no seu dispositivo perguntas e respostas selec
 
 Se quiser apenas copiar o texto para a área de transferência, escolha **Copiar** no menu **Continuar no**. A conversa selecionada será copiada em Markdown.
 
+## Confira imagens e tabelas
+
+As imagens compatíveis nas respostas, incluindo galerias, e as tabelas são incluídas na exportação. Clique em **Mostrar resposta** para conferir o conteúdo antes de exportar.
+
+![Resposta expandida com galeria de imagens e texto na caixa de diálogo do AI Mode Exporter](/images/support-images.webp)
+
 Mais tutoriais:
 
 - [Salvar como Markdown](/pt-br/blog/save-google-ai-mode-as-markdown/)

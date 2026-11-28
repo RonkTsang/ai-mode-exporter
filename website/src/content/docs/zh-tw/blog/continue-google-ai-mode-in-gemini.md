@@ -12,7 +12,7 @@ description: 將選取的 Google AI 模式問題與回答以 Markdown 附件帶�
 3. 確認新的 Gemini 草稿中出現 Markdown 附件。輸入後續要求，例如：「根據附件中的路線比較，安排三天的火車旅行行程。」
 4. 檢查草稿，準備好後再送出。
 
-![Google AI 模式的傳送視窗，可選取對話回合並選擇 Gemini 或 ChatGPT](/images/onboarding-selection.png)
+![Google AI 模式的傳送視窗，可選取對話回合並選擇 Gemini 或 ChatGPT](/images/onboarding-selection.webp)
 
 ## Gemini 附件沒有出現
 

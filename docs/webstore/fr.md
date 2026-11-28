@@ -19,7 +19,7 @@ CE QUE VOUS POUVEZ FAIRE
 • Exportation en Markdown soignée — Préserve les titres, listes à puces et numérotées, liens et tableaux dans un Markdown structuré afin que votre contexte reste parfaitement lisible.
 • Continuer dans Gemini — Ouvre une nouvelle conversation Gemini et joint les échanges sélectionnés sous forme de fichier Markdown (.md) dans la zone de rédaction.
 • Continuer dans ChatGPT — Ouvre une nouvelle conversation ChatGPT et insère la sélection dans la zone de saisie du message (les sélections plus longues peuvent apparaître sous forme de pièce jointe texte).
-• Relisez avant d’envoyer — Rien n’est envoyé automatiquement. Vérifiez le brouillon importé, ajoutez votre prochaine question et envoyez lorsque vous êtes prêt.
+• Relisez avant d’envoyer — L’extension n’envoie aucun message de chat à votre place. Vérifiez le brouillon importé, ajoutez votre prochaine question et envoyez lorsque vous êtes prêt.
 • Disponible en 9 langues — English, Deutsch, Español, Français, 日本語, 한국어, Português (Brasil), 简体中文 et 繁體中文.
 
 COMMENT L’UTILISER
@@ -37,14 +37,16 @@ IDÉAL POUR
 
 CONFIDENTIALITÉ ET AUTORISATIONS
 
-AI Mode Exporter ne collecte aucune donnée personnelle, ne suit pas votre navigation et n’envoie vos conversations vers aucun serveur tiers.
+AI Mode Exporter lit les questions et réponses de Google AI Mode pour vous permettre de les prévisualiser et de les exporter. L’extension ne dispose d’aucun serveur exploité par le développeur et n’utilise ni outils d’analyse, ni publicité, ni suivi de l’historique de navigation.
 
-• Stockage local temporaire — Votre exportation sélectionnée est enregistrée localement sur votre appareil uniquement pendant le transfert vers Gemini ou ChatGPT, puis automatiquement supprimée après l’importation ou au bout de 10 minutes.
-• Accès aux sites (Recherche Google, Gemini et ChatGPT) — Utilisé uniquement sur la Recherche Google pour afficher « Continuer avec… » et lire les échanges que vous sélectionnez, ainsi que sur Gemini ou ChatGPT pour préremplir le nouveau brouillon que vous ouvrez.
+• Recherche depuis la barre d’outils — Google reçoit votre question lorsqu’elle s’ouvre dans Google AI Mode.
+• Stockage local temporaire — L’extension enregistre votre sélection localement pour la transférer. L’entrée est supprimée après son importation. Les entrées inutilisées expirent au bout de 10 minutes et sont nettoyées au prochain démarrage du navigateur ou lors d’un nouveau transfert.
+• Accès aux sites (Recherche Google, Gemini et ChatGPT) — L’extension lit les conversations Google AI Mode. Lorsque vous choisissez une destination, elle insère les échanges sélectionnés dans un brouillon sur ce site. Le service de destination peut traiter le brouillon ou la pièce jointe avant son envoi.
 
 ASSISTANCE ET LIENS
 
 • Site web et guide : https://ai-mode-exporter.ronktsang.com
+• Politique de confidentialité : https://ai-mode-exporter.ronktsang.com/fr/privacy/
 • Signaler un bug et code source : https://github.com/RonkTsang/ai-mode-exporter
 • E-mail : ronktsang@gmail.com
 

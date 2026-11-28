@@ -12,7 +12,7 @@ AI Mode Exporter を使うと、Google 検索の AI モードで選んだ質問�
 3. 新しい Gemini の下書きに Markdown 添付ファイルが表示されたことを確認します。「添付した路線比較をもとに、3 日間の鉄道旅行を計画して」のように続けて入力します。
 4. 下書きを確認し、準備ができたら送信します。
 
-![Google AI モードの転送ダイアログで会話を選び、Gemini または ChatGPT を指定する画面](/images/onboarding-selection.png)
+![Google AI モードの転送ダイアログで会話を選び、Gemini または ChatGPT を指定する画面](/images/onboarding-selection.webp)
 
 ## Gemini に添付ファイルが表示されない場合
 

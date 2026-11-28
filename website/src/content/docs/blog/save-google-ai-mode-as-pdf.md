@@ -15,11 +15,16 @@ Use AI Mode Exporter to turn selected questions and answers from Google AI Mode 
 
 ## Save the preview as a PDF in Chrome
 
-1. Review the questions and answers on the preview page. Click **Print / Save as PDF** in the upper right.
+The saved PDF includes the tables shown in Chrome’s print preview and images that load successfully.
+
+1. Chrome may open its print dialog automatically. If you need to open it again, click **Print / Save as PDF** in the upper right of the extension’s preview page.
 
    ![The local AI Mode Exporter preview shows the selected conversation and the Print / Save as PDF button](/images/export-pdf.webp)
 
-2. In Chrome’s print dialog, set **Destination** to **Save as PDF**. Review the page layout and adjust settings such as the page range or margins if needed.
+2. Set **Destination** to **Save as PDF**. Check the tables, images, and page layout in the print preview. Adjust the page range or margins if needed.
+
+   ![Chrome’s print dialog with Save as PDF selected as the destination and the Save button in the lower right](/images/chrome-print-dialog.webp)
+
 3. Click **Save**, then choose a filename and folder.
 
 For an editable file, see [how to export Google AI Mode answers as Markdown](/blog/save-google-ai-mode-as-markdown/). The [Save as guide](/blog/save-google-ai-mode-conversation/) covers both export options.

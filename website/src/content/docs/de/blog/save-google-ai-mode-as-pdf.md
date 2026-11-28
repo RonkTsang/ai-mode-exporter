@@ -11,11 +11,15 @@ Mit der PDF-Vorschau von AI Mode Exporter kannst du ausgewählte Fragen und Antw
 
 1. Öffne [Google AI Mode](https://www.google.com/search?udm=50), stelle eine Frage und warte, bis die Antwort fertig ist. Klicke über dem Eingabefeld auf **Weiter mit…** und wähle die Fragen und Antworten aus, die du speichern möchtest.
 2. Öffne unten rechts das Menü **Weiter mit**, wähle **Speichern unter** und dann **PDF…**. AI Mode Exporter öffnet eine lokale Druckvorschau der Auswahl.
-3. Klicke in der Vorschau auf **Drucken / Als PDF speichern**. Wähle im Chrome-Druckdialog **Als PDF speichern** als Ziel und klicke auf **Speichern**.
+3. Sobald die Vorschau geladen ist, öffnet sich der Chrome-Druckdialog automatisch. Falls er nicht erscheint oder bereits geschlossen ist, klicke oben rechts in der Vorschau auf **Drucken / Als PDF speichern**. Wähle im Druckdialog **Als PDF speichern** als Ziel und klicke auf **Speichern**.
+
+   ![Im Chrome-Druckdialog ist „Als PDF speichern“ als Ziel ausgewählt und unten rechts die Schaltfläche „Speichern“ zu sehen](/images/chrome-print-dialog.webp)
 
 ![Die Menüoption „Speichern unter“ in AI Mode Exporter](/images/save-as.webp)
 
 ![Lokale Druckvorschau mit Schaltfläche zum Drucken oder Speichern als PDF](/images/export-pdf.webp)
+
+Bilder und Tabellen, die in der Druckvorschau geladen wurden, erscheinen auch im gespeicherten PDF. Prüfe die Vorschau vor dem Speichern, damit alle Bilder geladen und die Inhalte vollständig sind.
 
 Weitere Anleitungen:
 

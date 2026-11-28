@@ -96,6 +96,11 @@ export default defineConfig({
           translations: { 'zh-CN': '支持', 'zh-TW': '支援', de: 'Support', es: 'Ayuda', fr: 'Assistance', ja: 'サポート', ko: '지원', 'pt-BR': 'Suporte' },
           slug: 'support',
         },
+        {
+          label: 'Privacy Policy',
+          translations: { 'zh-CN': '隐私政策', 'zh-TW': '隱私權政策', de: 'Datenschutzerklärung', es: 'Política de privacidad', fr: 'Politique de confidentialité', ja: 'プライバシーポリシー', ko: '개인정보 처리방침', 'pt-BR': 'Política de privacidade' },
+          slug: 'privacy',
+        },
       ],
     }),
   ],

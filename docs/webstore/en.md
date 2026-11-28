@@ -19,7 +19,7 @@ WHAT YOU CAN DO
 • Clean Markdown export — Preserves headings, bullet and numbered lists, links, and tables in structured Markdown so your context stays readable.
 • Continue in Gemini — Opens a new Gemini chat and attaches your selected conversation as a Markdown (.md) file in the draft composer.
 • Continue in ChatGPT — Opens a new ChatGPT chat and inserts your selected conversation into the message composer (longer selections may appear as a text attachment).
-• You review before sending — Nothing is sent automatically. Inspect the imported draft, add your follow-up prompt, and send when ready.
+• You review before sending — The extension never submits a chat message for you. Inspect the imported draft, add your follow-up prompt, and send when ready.
 • Available in 9 languages — English, Deutsch, Español, Français, 日本語, 한국어, Português (Brasil), 简体中文, and 繁體中文.
 
 HOW TO USE
@@ -37,14 +37,16 @@ GREAT FOR
 
 PRIVACY & PERMISSIONS
 
-AI Mode Exporter does not collect personal data, track your browsing, or send your conversations to any third-party servers.
+AI Mode Exporter reads Google AI Mode questions and answers in your browser so you can preview and export them. The extension has no developer-operated backend, analytics, or browsing-history tracking.
 
-• Temporary local storage — Your selected export is stored locally on your device only during the handoff to Gemini or ChatGPT and is automatically cleared once imported or after 10 minutes.
-• Site access (Google Search, Gemini, and ChatGPT) — Used only on Google Search to display "Continue in…" and read the turns you select, and on Gemini or ChatGPT to populate the new draft you open.
+• Toolbar search — When you submit a question, it opens in Google Search AI Mode and Google receives the query.
+• Temporary local storage — The extension stores your selection on your device for the handoff. It removes the record after import. Unused transfers expire after 10 minutes and are cleaned up the next time the browser starts or another transfer starts.
+• Site access (Google Search, Gemini, and ChatGPT) — The extension reads the conversation on Google AI Mode. When you choose a destination, it puts your selected turns into a draft on that site. The destination may process the draft or attachment before you send it.
 
 SUPPORT & LINKS
 
 • Website & guide: https://ai-mode-exporter.ronktsang.com
+• Privacy policy: https://ai-mode-exporter.ronktsang.com/privacy/
 • Bug reports & source code: https://github.com/RonkTsang/ai-mode-exporter
 • Email: ronktsang@gmail.com
 

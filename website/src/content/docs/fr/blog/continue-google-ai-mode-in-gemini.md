@@ -12,7 +12,7 @@ AI Mode Exporter vous permet de reprendre une sélection de questions et répons
 3. Vérifiez qu’une pièce jointe Markdown apparaît dans le nouveau brouillon Gemini. Saisissez une question complémentaire, par exemple : « À partir de la comparaison des trajets jointe, prépare un voyage en train de trois jours. »
 4. Relisez le brouillon et envoyez-le lorsque vous êtes prêt.
 
-![La fenêtre de transfert Google AI Mode permet de sélectionner les échanges et de choisir Gemini ou ChatGPT](/images/onboarding-selection.png)
+![La fenêtre de transfert Google AI Mode permet de sélectionner les échanges et de choisir Gemini ou ChatGPT](/images/onboarding-selection.webp)
 
 ## Si la pièce jointe Gemini n’apparaît pas
 

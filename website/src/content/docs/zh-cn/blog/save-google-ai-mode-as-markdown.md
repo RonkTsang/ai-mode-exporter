@@ -14,6 +14,10 @@ description: 在 Chrome 中将 Google AI 模式的回答或整段对话下载为
 
 ![另存为子菜单中的 Markdown 下载选项](/images/save-as.webp)
 
+## Markdown 如何保存图片和表格
+
+表格会保存为 Markdown 表格。受支持的图片会以在线图片链接的形式保存。预览文件时，查看器需要支持 Markdown 表格，并能访问相应的图片地址。
+
 ## 将 Markdown 复制到剪贴板
 
 选中问答后，在**在其他平台继续**菜单中点击**复制**，再将 Markdown 文本粘贴到编辑器。

@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ site }) => {
     .filter(({ id }) => id.startsWith('blog/'))
     .sort((a, b) => a.id.localeCompare(b.id, 'en'));
   const translatedHubs = docs
-    .filter(({ id }) => /^[^/]+\/(blog|support)$/.test(id))
+    .filter(({ id }) => /^[^/]+\/(guide\/quick-start|blog|support)$/.test(id))
     .sort((a, b) => a.id.localeCompare(b.id, 'en'));
 
   const link = ({ id, data }: CollectionEntry<'docs'>) => {
@@ -23,6 +23,13 @@ export const GET: APIRoute = async ({ site }) => {
     `> ${home.data.description}`,
     '',
     'AI Mode Exporter is an independent Chrome extension for Google Search AI Mode.',
+    '',
+    '## Key capabilities',
+    '',
+    '- Continue selected Google AI Mode questions and answers in a new Gemini or ChatGPT draft (never auto-sent).',
+    '- Save selected turns as Markdown (.md) or printable PDF, or copy them as Markdown to the clipboard.',
+    '- Start a Google AI Mode search from any webpage using the Chrome toolbar popup, with multi-line prompt support.',
+    '- Use the toolbar popup ("Continue this chat…") as a built-in backup if a Google page update hides the in-page button.',
     '',
     '## Getting started',
     '',

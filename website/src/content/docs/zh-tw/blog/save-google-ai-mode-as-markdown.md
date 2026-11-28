@@ -14,6 +14,8 @@ description: 使用 AI Mode Exporter，將 Google AI 模式中選取的問題與
 
 ![AI Mode Exporter 的「另存新檔」選單](/images/save-as.webp)
 
+表格會以 Markdown 表格格式匯出。支援的圖片會保留為線上圖片連結，能否顯示取決於 Markdown 檢視器及來源圖片是否可存取。
+
 若只想將文字複製到剪貼簿，請在**在其他平台繼續**選單中選擇**複製**。系統會以 Markdown 格式複製所選對話。
 
 其他教學：

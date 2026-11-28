@@ -17,6 +17,12 @@ Mit AI Mode Exporter speicherst du ausgewählte Fragen und Antworten aus einer G
 
 Wenn du den Text nur in die Zwischenablage übernehmen möchtest, wähle im Menü **Weiter mit** die Option **Kopieren**. Sie kopiert die ausgewählte Unterhaltung als Markdown.
 
+## Bilder und Tabellen in der Vorschau prüfen
+
+Unterstützte Antwortbilder, einschließlich Bildergalerien, und Tabellen werden exportiert. Klicke auf **Antwort anzeigen**, um den Inhalt vor dem Export zu prüfen.
+
+![Ausgeklappte Antwort mit Bildergalerie und Text im Dialog von AI Mode Exporter](/images/support-images.webp)
+
 Weitere Anleitungen:
 
 - [Als Markdown speichern](/de/blog/save-google-ai-mode-as-markdown/)

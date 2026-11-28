@@ -17,6 +17,12 @@ AI Mode Exporter 可將 Google AI 模式對話中選取的問題與回答儲存�
 
 若只想將文字複製到剪貼簿，請在**在其他平台繼續**選單中選擇**複製**。系統會以 Markdown 格式複製所選對話。
 
+## 預覽圖片與表格
+
+支援的回答圖片（包括圖片集）與表格會一併匯出。點選**展開回答**即可預覽內容。
+
+![AI Mode Exporter 對話框中展開的回答，包含圖片集與文字內容](/images/support-images.webp)
+
 其他教學：
 
 - [另存為 Markdown](/zh-tw/blog/save-google-ai-mode-as-markdown/)

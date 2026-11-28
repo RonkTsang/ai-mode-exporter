@@ -12,7 +12,7 @@ Use AI Mode Exporter to bring selected questions and answers from Google Search 
 3. Check that a Markdown attachment appears in the new Gemini draft. Type a follow-up such as “Use the attached route comparison to plan a three-day trip by train.”
 4. Review the draft and send it when ready.
 
-![The Google AI Mode transfer dialog lets you select turns and choose Gemini or ChatGPT](/images/onboarding-selection.png)
+![The Google AI Mode transfer dialog lets you select turns and choose Gemini or ChatGPT](/images/onboarding-selection.webp)
 
 ## If the Gemini attachment is missing
 

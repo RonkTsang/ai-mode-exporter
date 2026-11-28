@@ -1,20 +1,89 @@
 ---
 title: Inicio rápido
-description: Continúa una conversación del Modo IA en Gemini o ChatGPT.
+description: "Empieza a usar AI Mode Exporter en minutos: continúa conversaciones del Modo IA de Google en Gemini o ChatGPT, guárdalas en Markdown o PDF y busca desde la barra de Chrome."
 ---
 
-¿Es la primera vez que usas la extensión? [Instala AI Mode Exporter desde el código fuente](/es/guide/install-and-troubleshoot/#instalar-desde-el-código-fuente).
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-1. Abre el [Modo IA de Google](https://www.google.com/search?udm=50), haz una pregunta y espera a que termine la respuesta.
+AI Mode Exporter te permite hacer tres cosas en el Modo IA de Google: **continuar** las preguntas y respuestas que elijas en Gemini o ChatGPT, **guardarlas o copiarlas** en Markdown o PDF y **empezar una nueva búsqueda del Modo IA** desde cualquier pestaña usando la barra de Chrome.
 
-   ![El botón para continuar encima del cuadro de entrada del Modo IA](/images/onboarding-entry.png)
+:::note[Antes de empezar]
+- **Instala la extensión** en Chrome de escritorio si aún no lo has hecho: [Instala AI Mode Exporter desde el código fuente](/es/guide/install-and-troubleshoot/#instalar-desde-el-código-fuente).
+- **Inicia sesión con antelación** en [Gemini](https://gemini.google.com/) o [ChatGPT](https://chatgpt.com/) si planeas continuar conversaciones allí.
+:::
 
-2. Haz clic en **Continuar en…**, selecciona las preguntas y respuestas que quieras y elige **Gemini** o **ChatGPT** en **Continuar en**.
+## Continúa una conversación en Gemini o ChatGPT
 
-   ![Selección de preguntas y elección de un destino](/images/onboarding-selection.png)
+<Steps>
 
-3. Revisa el borrador importado en la nueva conversación, escribe tu siguiente pregunta y envíala cuando quieras.
+1. **Haz una pregunta en el Modo IA de Google**
 
-   ![Una conversación importada adjunta a un borrador de Gemini](/images/onboarding-gemini.png)
+   Abre el [Modo IA de Google](https://www.google.com/search?udm=50), escribe una pregunta y espera a que termine de generarse la respuesta. Al finalizar, verás el botón **Continuar en…** encima del cuadro de entrada.
 
-Consulta los [tutoriales paso a paso](/es/blog/) para usar Gemini, ChatGPT y la búsqueda desde la barra de herramientas de Chrome. Si la transferencia se queda bloqueada, consulta [Instalación y solución de problemas](/es/guide/install-and-troubleshoot/).
+   ![El botón para continuar encima del cuadro de entrada del Modo IA](/images/onboarding-entry.webp)
+
+2. **Elige los turnos que quieres llevarte**
+
+   Haz clic en **Continuar en…** para abrir el cuadro de selección. Marca las preguntas y respuestas que quieras conservar (o pulsa **Seleccionar todo**), abre el menú **Continuar en** en la esquina inferior derecha y elige **Gemini** o **ChatGPT**.
+
+   ![Selección de preguntas y elección de un destino](/images/onboarding-selection.webp)
+
+3. **Revisa el borrador y envíalo**
+
+   Se abrirá una conversación nueva con el contexto seleccionado ya adjunto como borrador: **nada se envía automáticamente**. Revisa el contenido importado, añade tu siguiente pregunta y envíala cuando quieras.
+
+   ![Una conversación importada adjunta a un borrador de Gemini](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[Qué verás en cada plataforma]
+Gemini adjunta la conversación seleccionada como un archivo Markdown. ChatGPT la inserta directamente en el cuadro de texto (y puede convertir selecciones largas en un archivo adjunto).
+:::
+
+## Guarda o copia una conversación
+
+No hace falta cambiar de plataforma para conservar una respuesta útil. Desde el mismo menú **Continuar en** en la parte inferior derecha del diálogo, también puedes exportar en local:
+
+- **Copiar**: copia los turnos seleccionados al portapapeles en formato Markdown.
+- [**Guardar como → Markdown**](/es/blog/save-google-ai-mode-as-markdown/): descarga un archivo `.md` listo para tu aplicación de notas.
+- [**Guardar como → PDF…**](/es/blog/save-google-ai-mode-as-pdf/): abre una vista previa local limpia para imprimir o guardar la conversación como PDF.
+
+![El submenú Guardar como con las opciones Markdown y PDF](/images/save-as.webp)
+
+## Usa la ventana emergente de la barra de Chrome
+
+Fijar la extensión en la barra de Chrome pone dos accesos rápidos a un solo clic:
+
+1. Haz clic en el icono de **Extensiones** de Chrome (la pieza de puzle) en la esquina superior derecha.
+2. Pulsa el icono de chincheta junto a **AI Mode Exporter** para mantenerlo visible en la barra.
+
+### Pregunta al Modo IA desde cualquier página
+
+Haz clic en el icono fijado de **AI Mode Exporter** desde cualquier web, escribe tu pregunta en **Preguntar a AI Mode** y pulsa **Enter** (o el icono de búsqueda). La búsqueda se abrirá en una pestaña nueva del Modo IA de Google sin cerrar tu página actual.
+
+![AI Mode Exporter fijado en la barra de Chrome y su ventana emergente con el campo de búsqueda](/images/toolbar-popup.webp)
+
+### Acceso alternativo si desaparece el botón de la página
+
+:::tip[¿No ves el botón «Continuar en…» en la página?]
+Google actualiza de vez en cuando el diseño del Modo IA, lo que puede ocultar temporalmente el botón integrado. Siempre puedes usar la ventana emergente como alternativa.
+:::
+
+Con la pestaña del Modo IA de Google abierta y la respuesta terminada, haz clic en el icono de **AI Mode Exporter** en la barra y elige **Continuar este chat…**. Se abrirá exactamente el mismo selector para continuar en Gemini o ChatGPT o guardar la conversación.
+
+![Ventana emergente de AI Mode Exporter en el Modo IA de Google con el botón Continuar este chat](/images/toolbar-popup-continue.webp)
+
+## Siguientes pasos
+
+<CardGrid>
+  <LinkCard
+    title="Tutoriales paso a paso"
+    description="Guías detalladas para Gemini, ChatGPT, Markdown, PDF y la búsqueda desde la barra."
+    href="/es/blog/"
+  />
+  <LinkCard
+    title="Instalación y solución de problemas"
+    description="Soluciona un botón ausente, un borrador vacío o repasa los pasos de instalación."
+    href="/es/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

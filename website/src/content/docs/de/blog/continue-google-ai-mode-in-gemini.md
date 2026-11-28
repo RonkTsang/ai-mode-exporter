@@ -12,7 +12,7 @@ Mit AI Mode Exporter übernimmst du ausgewählte Fragen und Antworten aus Google
 3. Prüfe, ob im neuen Gemini-Entwurf ein Markdown-Anhang erscheint. Ergänze eine Rückfrage, zum Beispiel: „Plane anhand des angehängten Zugvergleichs eine dreitägige Reise.“
 4. Prüfe den Entwurf und sende ihn, wenn du bereit bist.
 
-![Im Übertragungsdialog von Google AI Mode lassen sich Nachrichten auswählen und Gemini oder ChatGPT festlegen](/images/onboarding-selection.png)
+![Im Übertragungsdialog von Google AI Mode lassen sich Nachrichten auswählen und Gemini oder ChatGPT festlegen](/images/onboarding-selection.webp)
 
 ## Wenn der Gemini-Anhang fehlt
 

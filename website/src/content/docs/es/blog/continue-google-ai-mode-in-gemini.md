@@ -12,7 +12,7 @@ Con AI Mode Exporter puedes incluir preguntas y respuestas seleccionadas de una 
 3. Comprueba que aparezca un archivo Markdown adjunto en el nuevo borrador de Gemini. Escribe una pregunta de seguimiento, por ejemplo: «Usa la comparación de rutas adjunta para planificar un viaje en tren de tres días».
 4. Revisa el borrador y envíalo cuando quieras.
 
-![El cuadro de transferencia del Modo IA de Google permite seleccionar turnos y elegir Gemini o ChatGPT](/images/onboarding-selection.png)
+![El cuadro de transferencia del Modo IA de Google permite seleccionar turnos y elegir Gemini o ChatGPT](/images/onboarding-selection.webp)
 
 ## Si no aparece el archivo adjunto de Gemini
 

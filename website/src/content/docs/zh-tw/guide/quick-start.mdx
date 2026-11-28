@@ -1,20 +1,89 @@
 ---
 title: 快速入門
-description: 將 AI 模式對話帶到 Gemini 或 ChatGPT 繼續。
+description: 幾分鐘上手 AI Mode Exporter：在 Gemini 或 ChatGPT 繼續 Google AI 模式對話、匯出 Markdown 或 PDF，以及從 Chrome 工具列隨時提問。
 ---
 
-第一次使用嗎？請先[從原始碼安裝 AI Mode Exporter](/zh-tw/guide/install-and-troubleshoot/#從原始碼安裝)。
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-1. 開啟 [Google AI 模式](https://www.google.com/search?udm=50)，提出問題並等待回答完成。
+AI Mode Exporter 可以幫你在 Google 搜尋 AI 模式中完成三件事：將選取的問答**帶到 Gemini 或 ChatGPT 繼續對話**、將其**儲存或複製為 Markdown / PDF**，以及隨時**從 Chrome 工具列發起新的 AI 模式搜尋**。
 
-   ![AI 模式輸入框上方的繼續對話按鈕](/images/onboarding-entry.png)
+:::note[開始之前]
+- **安裝擴充功能**：如果尚未安裝，請先在桌面版 Chrome 中[從原始碼安裝 AI Mode Exporter](/zh-tw/guide/install-and-troubleshoot/#從原始碼安裝)。
+- **提前登入**：如果打算將對話帶到 [Gemini](https://gemini.google.com/) 或 [ChatGPT](https://chatgpt.com/)，建議先在瀏覽器中登入對應帳號。
+:::
 
-2. 點選**繼續對話…**，選取要保留的問題與回答，再點選**在其他平台繼續**並選擇 Gemini 或 ChatGPT。
+## 在 Gemini 或 ChatGPT 中繼續對話
 
-   ![選取問題與目標平台](/images/onboarding-selection.png)
+<Steps>
 
-3. 在新對話中檢查匯入的草稿，輸入後續問題，準備好再送出。
+1. **在 Google AI 模式中提問**
 
-   ![已附加至 Gemini 草稿的對話](/images/onboarding-gemini.png)
+   開啟 [Google AI 模式](https://www.google.com/search?udm=50)，提出問題並等待回答生成完成。回答完成後，輸入框上方會出現**繼續對話…**按鈕。
 
-查看[逐步教學](/zh-tw/blog/)，了解如何在 Gemini、ChatGPT 繼續對話，或從 Chrome 工具列啟動 AI 模式。若傳送過程停住，請查看[安裝與疑難排解](/zh-tw/guide/install-and-troubleshoot/)。
+   ![AI 模式輸入框上方的繼續對話按鈕](/images/onboarding-entry.webp)
+
+2. **選取要帶走的問答**
+
+   點選**繼續對話…**開啟選擇視窗。勾選想保留的問題與回答（或點選**全選**），接著點選右下角的**在其他平台繼續**，選擇 **Gemini** 或 **ChatGPT**。
+
+   ![選取問題與目標平台](/images/onboarding-selection.webp)
+
+3. **檢查草稿並送出**
+
+   擴充功能會自動開啟新對話並將所選內容填入草稿，**不會自動送出**。你可以先檢查匯入的內容、輸入後續問題，確認無誤後再送出。
+
+   ![已附加至 Gemini 草稿的對話](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[不同平台的匯入方式]
+Gemini 會將選取的對話以 Markdown 檔案附加在草稿中；ChatGPT 會直接將內容插入輸入框（內容較長時可能會自動轉為文字附件）。
+:::
+
+## 儲存或複製對話
+
+如果只想保留實用的回答，不需要切換到其他平台。在同一個選擇視窗中，點選右下角的**在其他平台繼續**，即可直接在本機匯出：
+
+- **複製**：將選取的問答以 Markdown 格式複製到剪貼簿。
+- [**另存新檔 → Markdown**](/zh-tw/blog/save-google-ai-mode-as-markdown/)：下載 `.md` 檔案，方便編輯或匯入筆記軟體。
+- [**另存新檔 → PDF…**](/zh-tw/blog/save-google-ai-mode-as-pdf/)：開啟整潔的本機預覽頁，確認排版後即可列印或另存為 PDF。
+
+![AI Mode Exporter 的另存新檔選單顯示 Markdown 與 PDF 選項](/images/save-as.webp)
+
+## 使用 Chrome 工具列彈出視窗
+
+將擴充功能釘選到 Chrome 工具列後，隨時點一下就能使用兩項實用功能：
+
+1. 點選 Chrome 右上角的**擴充功能**圖示（拼圖圖示）。
+2. 點選 **AI Mode Exporter** 旁的釘選圖示，讓它常駐在工具列上。
+
+### 在任何網頁直接提問 AI 模式
+
+不論目前正在瀏覽哪個網頁，點選工具列上的 **AI Mode Exporter** 圖示，在**詢問 AI 模式**欄位輸入問題並按 **Enter**（或點選搜尋圖示）。Google AI 模式會在新分頁中開啟搜尋，不會中斷原本的網頁。
+
+![Chrome 工具列上已釘選 AI Mode Exporter，彈出視窗中顯示搜尋欄位](/images/toolbar-popup.webp)
+
+### 頁面按鈕消失時的備用入口
+
+:::tip[頁面上看不到「繼續對話…」按鈕？]
+Google 偶爾會調整 AI 模式的頁面版面，可能導致頁面內的按鈕暫時無法顯示。此時可以直接使用工具列彈出視窗作為備用入口。
+:::
+
+停留在已完成回答的 Google AI 模式分頁，點選工具列上的 **AI Mode Exporter** 圖示，選擇**繼續這段對話…**。這會開啟完全相同的問答選擇視窗，同樣支援繼續到 Gemini / ChatGPT 或匯出儲存。
+
+![在 Google AI 模式頁面開啟 AI Mode Exporter 彈出視窗，並顯示繼續這段對話按鈕](/images/toolbar-popup-continue.webp)
+
+## 下一步
+
+<CardGrid>
+  <LinkCard
+    title="逐步教學"
+    description="查看 Gemini、ChatGPT、Markdown、PDF 匯出與工具列搜尋的詳細指南。"
+    href="/zh-tw/blog/"
+  />
+  <LinkCard
+    title="安裝與疑難排解"
+    description="解決按鈕未顯示、匯入草稿為空等問題，或查看完整安裝步驟。"
+    href="/zh-tw/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

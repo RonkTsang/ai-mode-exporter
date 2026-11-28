@@ -12,7 +12,7 @@ description: 将选定的 Google AI 模式问题和回答作为 Markdown 附件�
 3. 确认新的 Gemini 草稿中出现 Markdown 附件。输入后续请求，例如：“根据附件中的路线比较，安排一个三天的火车旅行行程。”
 4. 检查草稿，准备好后发送。
 
-![Google AI 模式传输对话框，可选择对话轮次并选择 Gemini 或 ChatGPT](/images/onboarding-selection.png)
+![Google AI 模式传输对话框，可选择对话轮次并选择 Gemini 或 ChatGPT](/images/onboarding-selection.webp)
 
 ## Gemini 附件没有出现
 

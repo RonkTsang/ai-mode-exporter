@@ -1,20 +1,89 @@
 ---
 title: Quick start
-description: Continue an AI Mode conversation in Gemini or ChatGPT.
+description: Continue Google AI Mode chats in Gemini or ChatGPT, export answers as Markdown or PDF, and search AI Mode from Chrome’s toolbar.
 ---
 
-Using the extension for the first time? [Install AI Mode Exporter from source](/guide/install-and-troubleshoot/#install-from-source).
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-1. Open [Google AI Mode](https://www.google.com/search?udm=50), ask a question, and wait for the answer to finish.
+AI Mode Exporter helps you do three things in Google Search AI Mode: **continue** selected questions and answers in Gemini or ChatGPT, **save or copy** them as Markdown or PDF, and **start a new AI Mode search** from any tab using the Chrome toolbar.
 
-   ![The continuation button above the AI Mode input](/images/onboarding-entry.png)
+:::note[Before you begin]
+- **Install the extension** in desktop Chrome if you haven’t yet: [Install AI Mode Exporter from source](/guide/install-and-troubleshoot/#install-from-source).
+- **Sign in ahead of time** to [Gemini](https://gemini.google.com/) or [ChatGPT](https://chatgpt.com/) if you plan to continue conversations there.
+:::
 
-2. Click **Continue in…**, select the questions and answers you want, and choose **Continue in** followed by Gemini or ChatGPT.
+## Continue a conversation in Gemini or ChatGPT
 
-   ![Selecting a question and choosing a destination](/images/onboarding-selection.png)
+<Steps>
 
-3. Review the imported draft in the new conversation, add your next question, and send it when you are ready.
+1. **Ask a question in Google AI Mode**
 
-   ![An imported conversation attached to a Gemini draft](/images/onboarding-gemini.png)
+   Open [Google AI Mode](https://www.google.com/search?udm=50), ask a question, and wait for the answer to finish generating. Once it finishes, the **Continue in…** button appears above the input box.
 
-See the [step-by-step tutorials](/blog/) for Gemini, ChatGPT, and the Chrome toolbar. If the transfer stalls, see [how to troubleshoot an empty draft](/guide/install-and-troubleshoot/#the-destination-opens-with-an-empty-draft).
+   ![The Continue in button above the Google AI Mode input box](/images/onboarding-entry.webp)
+
+2. **Choose the turns you want to bring**
+
+   Click **Continue in…** to open the selection dialog. Check the questions and answers you want to keep (or click **Select all**), then open the **Continue in** menu at the bottom right and pick **Gemini** or **ChatGPT**.
+
+   ![Selecting questions and answers and choosing Gemini or ChatGPT](/images/onboarding-selection.webp)
+
+3. **Review the draft and send**
+
+   A new conversation opens with your selected context already attached as a draft—nothing is sent automatically. Review the imported content, add your follow-up question, and send it when you are ready.
+
+   ![An imported AI Mode conversation attached to a Gemini draft](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[What to expect in each platform]
+Gemini attaches your selected conversation as a Markdown file. ChatGPT inserts it directly into the message box (and may turn longer selections into a text attachment).
+:::
+
+## Save or copy a conversation
+
+You don’t have to switch platforms to keep a useful answer. From the same **Continue in** menu at the bottom right of the selection dialog, you can also export locally:
+
+- **Copy** — copies the selected turns to your clipboard as Markdown.
+- [**Save as → Markdown**](/blog/save-google-ai-mode-as-markdown/) — downloads a `.md` file ready for your notes app.
+- [**Save as → PDF…**](/blog/save-google-ai-mode-as-pdf/) — opens a clean local preview so you can print or save the conversation as a PDF.
+
+![The Save as submenu showing Markdown and PDF options](/images/save-as.webp)
+
+## Use the Chrome toolbar popup
+
+Pinning the extension to your Chrome toolbar puts two handy shortcuts one click away.
+
+1. Click Chrome’s **Extensions** icon (the puzzle piece) in the top-right corner of the toolbar.
+2. Click the pin icon next to **AI Mode Exporter** so it stays visible on your toolbar.
+
+### Ask AI Mode from any page
+
+Click the pinned **AI Mode Exporter** icon on any webpage, type your question into **Ask AI Mode**, and press **Enter** (or click the search icon). Google AI Mode opens your search in a new tab while keeping your current page open.
+
+![The pinned AI Mode Exporter icon opens a popup with an Ask AI Mode search field](/images/toolbar-popup.webp)
+
+### Backup entry when the in-page button is missing
+
+:::tip[Don’t see “Continue in…” on the page?]
+Google occasionally updates the AI Mode page layout, which can temporarily hide the in-page button. You can always use the toolbar popup as a backup.
+:::
+
+While on a Google AI Mode tab with a finished answer, click the **AI Mode Exporter** icon in the toolbar and choose **Continue this chat…**. It opens the exact same selection dialog so you can continue in Gemini or ChatGPT, or save the conversation.
+
+![On an AI Mode tab, the extension popup shows the Continue this chat option](/images/toolbar-popup-continue.webp)
+
+## Next steps
+
+<CardGrid>
+  <LinkCard
+    title="Step-by-step tutorials"
+    description="Detailed guides for Gemini, ChatGPT, Markdown, PDF, and toolbar search."
+    href="/blog/"
+  />
+  <LinkCard
+    title="Installation & troubleshooting"
+    description="Fix a missing button, an empty draft, or review installation steps."
+    href="/guide/install-and-troubleshoot/"
+  />
+</CardGrid>

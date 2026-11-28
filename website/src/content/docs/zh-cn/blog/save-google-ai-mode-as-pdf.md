@@ -15,11 +15,16 @@ description: 在 Chrome 中将 Google AI 模式的回答或整段对话导出为
 
 ## 在 Chrome 中保存为 PDF
 
-1. 检查预览页中的问答，然后点击右上角的**打印 / 另存为 PDF**。
+PDF 会保留 Chrome 打印预览中的表格和成功加载的图片。
+
+1. Chrome 可能会自动打开打印对话框。如需重新打开，点击扩展预览页右上角的**打印 / 另存为 PDF**。
 
    ![扩展的本地预览页显示选中的对话，右上角是打印或另存为 PDF 按钮](/images/export-pdf.webp)
 
-2. 在 Chrome 的打印对话框中，将**目标打印机**设为**另存为 PDF**。检查页面布局，按需调整页码范围或边距。
+2. 将**目标打印机**设为**另存为 PDF**。在打印预览中检查表格、图片和页面布局，按需调整页码范围或边距。
+
+   ![Chrome 打印对话框的目标打印机已设为另存为 PDF，右下角是保存按钮](/images/chrome-print-dialog.webp)
+
 3. 点击**保存**，选择文件名和存放位置。
 
 如果需要可编辑的文件，请查看[如何将 Google AI 模式回答保存为 Markdown](/zh-cn/blog/save-google-ai-mode-as-markdown/)。[「另存为」教程](/zh-cn/blog/save-google-ai-mode-conversation/)介绍了两种格式。

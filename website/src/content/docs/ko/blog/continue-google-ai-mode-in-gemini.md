@@ -12,7 +12,7 @@ AI Mode Exporter를 사용하면 Google 검색 AI 모드에서 선택한 질문�
 3. 새 Gemini 초안에 Markdown 첨부 파일이 표시되는지 확인합니다. “첨부한 경로 비교를 바탕으로 3일 기차 여행 일정을 계획해 줘”처럼 후속 요청을 입력합니다.
 4. 초안을 확인하고 준비가 되면 전송합니다.
 
-![Google AI 모드 전송 대화상자에서 대화 내용을 선택하고 Gemini 또는 ChatGPT를 지정하는 화면](/images/onboarding-selection.png)
+![Google AI 모드 전송 대화상자에서 대화 내용을 선택하고 Gemini 또는 ChatGPT를 지정하는 화면](/images/onboarding-selection.webp)
 
 ## Gemini 첨부 파일이 보이지 않음
 

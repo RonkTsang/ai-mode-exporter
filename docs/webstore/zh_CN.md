@@ -37,14 +37,16 @@ AI Mode Exporter 是一款专为 Google 搜索 AI 模式（AI Mode）打造的�
 
 隐私与权限说明
 
-AI Mode Exporter 不会收集个人数据、追踪您的浏览记录，也不会将您的对话发送到任何第三方服务器。
+AI Mode Exporter 会读取 Google 搜索 AI 模式中的问题与回答，以便您预览和导出。扩展没有由开发者运营的后端，不使用分析、广告或浏览记录追踪。
 
-• 临时本地存储 — 您选择导出的内容仅在迁移至 Gemini 或 ChatGPT 期间暂存于本地设备，并在导入完成后或 10 分钟后自动清除。
-• 网站访问权限（Google 搜索、Gemini 与 ChatGPT）— 仅用于在 Google 搜索页面显示“继续对话…”并读取您勾选的对话轮次，以及在您打开的 Gemini 或 ChatGPT 新对话中填入草稿内容。
+• 工具栏搜索 — 在 Google 搜索 AI 模式中打开问题时，Google 会收到该问题。
+• 临时本地存储 — 扩展会在迁移期间将您选择的内容保存在本地，并在导入后删除记录。未使用的记录会在 10 分钟后过期，并在下次启动浏览器或开始另一项迁移时清理。
+• 网站访问权限（Google 搜索、Gemini 与 ChatGPT）— 扩展会读取 Google 搜索 AI 模式中的对话。您选择目标平台后，扩展会将选中的轮次填入该网站的新草稿。目标服务可能会在您发送前处理草稿或附件。
 
 支持与相关链接
 
 • 官网与使用指南：https://ai-mode-exporter.ronktsang.com
+• 隐私政策：https://ai-mode-exporter.ronktsang.com/zh-cn/privacy/
 • 问题反馈与源代码：https://github.com/RonkTsang/ai-mode-exporter
 • 联系邮箱：ronktsang@gmail.com
 

@@ -12,7 +12,7 @@ Com o AI Mode Exporter, você pode levar perguntas e respostas selecionadas de u
 3. Confira se um arquivo Markdown aparece anexado ao novo rascunho do Gemini. Digite uma pergunta complementar, por exemplo: “Use a comparação de rotas anexada para planejar uma viagem de trem de três dias”.
 4. Revise o rascunho e envie quando quiser.
 
-![A janela de transferência do Modo IA do Google permite selecionar mensagens e escolher Gemini ou ChatGPT](/images/onboarding-selection.png)
+![A janela de transferência do Modo IA do Google permite selecionar mensagens e escolher Gemini ou ChatGPT](/images/onboarding-selection.webp)
 
 ## Se o anexo do Gemini não aparecer
 

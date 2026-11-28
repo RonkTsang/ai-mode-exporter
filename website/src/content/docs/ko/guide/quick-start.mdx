@@ -1,20 +1,89 @@
 ---
 title: 빠른 시작
-description: AI 모드 대화를 Gemini 또는 ChatGPT에서 이어가는 방법을 알아보세요.
+description: "몇 분 만에 AI Mode Exporter 시작하기: Google AI 모드 대화를 Gemini나 ChatGPT에서 이어가고, Markdown·PDF로 저장하고, Chrome 툴바에서 바로 검색해 보세요."
 ---
 
-처음 사용한다면 먼저 [소스에서 AI Mode Exporter를 설치](/ko/guide/install-and-troubleshoot/#소스에서-설치)하세요.
+import { CardGrid, LinkCard, Steps } from '@astrojs/starlight/components';
 
-1. [Google AI 모드](https://www.google.com/search?udm=50)를 열고 질문한 다음 답변이 완료될 때까지 기다립니다.
+AI Mode Exporter를 사용하면 Google 검색 AI 모드에서 세 가지 작업을 간편하게 처리할 수 있습니다. 선택한 질문과 답변을 **Gemini 또는 ChatGPT에서 이어가기**, **Markdown이나 PDF로 저장·복사하기**, 그리고 어느 탭에서든 **Chrome 툴바로 새 AI 모드 검색 시작하기**입니다.
 
-   ![AI 모드 입력창 위의 대화 이어가기 버튼](/images/onboarding-entry.png)
+:::note[시작하기 전에]
+- **확장 프로그램 설치**: 아직 설치하지 않았다면 데스크톱 Chrome에서 먼저 [소스에서 AI Mode Exporter를 설치](/ko/guide/install-and-troubleshoot/#소스에서-설치)하세요.
+- **미리 로그인**: [Gemini](https://gemini.google.com/) 또는 [ChatGPT](https://chatgpt.com/)에서 대화를 이어갈 계획이라면 브라우저에서 미리 로그인해 두는 것이 좋습니다.
+:::
 
-2. 입력창 위의 **계속하기…**를 클릭해 가져올 질문과 답변을 선택합니다. **계속할 플랫폼**에서 Gemini 또는 ChatGPT를 고릅니다.
+## Gemini 또는 ChatGPT에서 대화 이어가기
 
-   ![질문과 답변을 선택하고 가져올 서비스를 고르는 화면](/images/onboarding-selection.png)
+<Steps>
 
-3. 새 대화의 초안을 확인하고 후속 질문을 입력한 뒤 전송합니다.
+1. **Google AI 모드에서 질문하기**
 
-   ![선택한 대화를 Markdown 첨부 파일로 가져온 Gemini 초안](/images/onboarding-gemini.png)
+   [Google AI 모드](https://www.google.com/search?udm=50)를 열어 질문하고 답변 생성이 끝날 때까지 기다립니다. 답변이 완료되면 입력창 위에 **계속하기…** 버튼이 나타납니다.
 
-[단계별 가이드](/ko/blog/)에서 Gemini 및 ChatGPT로 대화를 이어가거나 Chrome 툴바에서 AI 모드를 여는 방법을 확인하세요. 전송이 멈추면 [설치 및 문제 해결](/ko/guide/install-and-troubleshoot/)를 참고하세요.
+   ![AI 모드 입력창 위의 대화 이어가기 버튼](/images/onboarding-entry.webp)
+
+2. **가져갈 대화 선택하기**
+
+   **계속하기…**를 클릭해 선택 대화상자를 엽니다. 가져갈 질문과 답변을 체크하거나 **모두 선택**을 클릭한 뒤, 오른쪽 아래의 **계속할 플랫폼** 메뉴에서 **Gemini** 또는 **ChatGPT**를 선택합니다.
+
+   ![질문과 답변을 선택하고 가져올 서비스를 고르는 화면](/images/onboarding-selection.webp)
+
+3. **초안 확인 후 전송하기**
+
+   선택한 내용이 초안으로 첨부된 새 대화가 열리며 **자동으로 전송되지 않습니다**. 가져온 내용을 확인하고 후속 질문을 입력한 뒤 준비되면 전송하세요.
+
+   ![선택한 대화를 Markdown 첨부 파일로 가져온 Gemini 초안](/images/onboarding-gemini.webp)
+
+</Steps>
+
+:::tip[플랫폼별 가져오기 방식]
+Gemini는 선택한 대화를 Markdown 파일로 첨부합니다. ChatGPT는 입력창에 텍스트를 바로 넣으며, 내용이 길면 텍스트 첨부 파일로 전환될 수 있습니다.
+:::
+
+## 대화 저장 또는 복사하기
+
+다른 플랫폼으로 이동하지 않고 유용한 답변만 보관할 수도 있습니다. 선택 대화상자 오른쪽 아래의 같은 **계속할 플랫폼** 메뉴에서 바로 내보낼 수 있습니다.
+
+- **복사**: 선택한 대화를 Markdown 형식으로 클립보드에 복사합니다.
+- [**다른 이름으로 저장 → Markdown**](/ko/blog/save-google-ai-mode-as-markdown/): 메모 앱 등에서 바로 사용할 수 있는 `.md` 파일을 다운로드합니다.
+- [**다른 이름으로 저장 → PDF…**](/ko/blog/save-google-ai-mode-as-pdf/): 깔끔한 로컬 미리보기를 열어 인쇄하거나 PDF로 저장할 수 있습니다.
+
+![Markdown 및 PDF 옵션을 표시하는 다른 이름으로 저장 하위 메뉴](/images/save-as.webp)
+
+## Chrome 툴바 팝업 사용하기
+
+확장 프로그램을 Chrome 툴바에 고정해 두면 두 가지 유용한 기능을 클릭 한 번으로 사용할 수 있습니다.
+
+1. Chrome 툴바 오른쪽 위의 **확장 프로그램** 아이콘(퍼즐 모양)을 클릭합니다.
+2. **AI Mode Exporter** 옆의 고정(핀) 아이콘을 클릭해 툴바에 표시합니다.
+
+### 어느 페이지에서나 AI 모드에 질문하기
+
+현재 보고 있는 웹페이지에서 툴바의 **AI Mode Exporter** 아이콘을 클릭하고 **AI Mode에 질문하기** 입력란에 질문을 입력한 뒤 **Enter**(또는 검색 아이콘)를 누릅니다. 현재 페이지는 그대로 유지된 채 새 탭에서 Google AI 모드 검색이 열립니다.
+
+![Chrome 툴바에 고정된 AI Mode Exporter와 검색 입력란이 보이는 팝업](/images/toolbar-popup.webp)
+
+### 페이지 버튼이 보이지 않을 때 대체 경로
+
+:::tip[페이지에 ‘계속하기…’ 버튼이 보이지 않나요?]
+Google이 AI 모드 페이지 구조를 변경하면 페이지 안의 버튼이 일시적으로 사라질 수 있습니다. 이럴 때는 툴바 팝업을 대체 경로로 사용하세요.
+:::
+
+답변이 완료된 Google AI 모드 탭에서 툴바의 **AI Mode Exporter** 아이콘을 클릭하고 **이 채팅 이어가기…**를 선택합니다. 동일한 질문·답변 선택 대화상자가 열리며 Gemini / ChatGPT 이어가기와 저장 기능을 그대로 사용할 수 있습니다.
+
+![Google AI 모드에서 AI Mode Exporter 팝업을 열어 이 채팅 이어가기 버튼을 표시](/images/toolbar-popup-continue.webp)
+
+## 다음 단계
+
+<CardGrid>
+  <LinkCard
+    title="단계별 튜토리얼"
+    description="Gemini, ChatGPT, Markdown·PDF 저장, 툴바 검색의 자세한 사용법."
+    href="/ko/blog/"
+  />
+  <LinkCard
+    title="설치 및 문제 해결"
+    description="버튼이 안 보이거나 초안이 비어 있을 때의 해결 방법과 설치 안내."
+    href="/ko/guide/install-and-troubleshoot/"
+  />
+</CardGrid>
