@@ -1,4 +1,5 @@
 import { browser } from 'wxt/browser'
+import { getQuickStartUrl } from '@/common/supportLinks'
 import { createLogger } from '@/utils/logger'
 
 const logger = createLogger('Lifecycle')
@@ -12,6 +13,15 @@ export function startLifecycleBackground(): void {
       await browser.runtime.setUninstallURL(uninstallSurveyUrl)
     } catch (error) {
       logger.error('Failed to set uninstall survey URL', error)
+    }
+
+    if (!import.meta.env.CHROME || reason !== 'install') return
+
+    try {
+      const url = getQuickStartUrl(browser.i18n.getUILanguage())
+      await browser.tabs.create({ url })
+    } catch (error) {
+      logger.error('Failed to open Quick Start', error)
     }
   })
 }
