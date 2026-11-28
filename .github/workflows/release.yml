@@ -1,0 +1,152 @@
+name: Release
+
+on:
+  workflow_dispatch:  # Manual trigger only - run when ready to release
+    inputs:
+      dry-run:
+        description: 'Run in dry-run mode (preview only, no actual release)'
+        required: false
+        type: boolean
+        default: true
+
+permissions: {}
+
+concurrency:
+  group: extension-release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch-release:
+    name: Start Release on release
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Forward the selected release mode to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY_RUN: ${{ inputs.dry-run }}
+        run: |
+          result=$(gh workflow run release.yml --repo "$GITHUB_REPOSITORY" --ref release -f "dry-run=$DRY_RUN")
+          printf 'Started Release on `release` (`dry-run=%s`).\n\n%s\n' "$DRY_RUN" "$result" >> "$GITHUB_STEP_SUMMARY"
+
+  validate-ref:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require release
+        run: |
+          if [[ "$GITHUB_REF" != refs/heads/release ]]; then
+            echo '::error::Run the extension release from release.'
+            exit 1
+          fi
+
+  release:
+    name: Release
+    needs: validate-ref
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    outputs:
+      tag: ${{ steps.publish.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22.23.4'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Step 1: Predict next version using semantic-release dry-run
+      # This allows us to build with the correct version before actual release
+      - name: Get next release version
+        id: version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node --input-type=module <<'JS'
+          import { appendFileSync } from 'node:fs';
+          import semanticRelease from 'semantic-release';
+
+          const result = await semanticRelease({ dryRun: true });
+          if (result?.nextRelease) {
+            appendFileSync(process.env.GITHUB_OUTPUT, `version=${result.nextRelease.version}\n`);
+          }
+          JS
+
+      # Step 2: Build and package both browser targets with the predicted version.
+      # 'pnpm run zip' commands automatically run WXT build before packaging.
+      # The RELEASE_VERSION env var is read by wxt.config.ts for both build and zip.
+      - name: Build and Package
+        if: steps.version.outputs.version != ''
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          name=$(node -p 'require("./package.json").name')
+          pnpm run zip
+          pnpm run zip:firefox
+          for target in chrome firefox; do
+            archive=".output/${name}-${RELEASE_VERSION}-${target}.zip"
+            unzip -tq "$archive"
+            unzip -p "$archive" manifest.json | jq -e --arg version "$RELEASE_VERSION" '.version == $version'
+          done
+          unzip -tq ".output/${name}-${RELEASE_VERSION}-sources.zip"
+
+      - name: Upload preview packages
+        if: steps.version.outputs.version != '' && inputs.dry-run
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-preview-${{ steps.version.outputs.version }}
+          path: .output/*.zip
+          include-hidden-files: true
+          if-no-files-found: error
+
+      # Step 3: Execute actual release
+      # semantic-release will update version, create changelog, commit, tag, and publish
+      - name: Publish release
+        id: publish
+        if: steps.version.outputs.version != '' && !inputs.dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXPECTED_VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git fetch --no-tags origin release
+          if [[ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]]; then
+            echo '::error::release changed during packaging. Start a fresh release run.'
+            exit 1
+          fi
+
+          node --input-type=module <<'JS'
+          import { appendFileSync } from 'node:fs';
+          import semanticRelease from 'semantic-release';
+
+          const result = await semanticRelease();
+          if (result?.nextRelease?.version !== process.env.EXPECTED_VERSION) {
+            throw new Error('Release version does not match the packaged version. Inspect the release before retrying.');
+          }
+          appendFileSync(process.env.GITHUB_OUTPUT, `tag=${result.nextRelease.gitTag}\n`);
+          JS
+
+  sync:
+    needs: release
+    if: needs.release.outputs.tag != ''
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: ./.github/workflows/sync-release.yml
+    with:
+      tag: ${{ needs.release.outputs.tag }}
